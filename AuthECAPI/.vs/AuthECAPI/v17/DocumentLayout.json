@@ -1,0 +1,358 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\Saurabh\\Angular Study\\.Net Core WebAPI With Angular\\Git\\Project\\AuthECAPI\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{30CA304F-4FA9-4B13-A460-C1B7671161BE}|AuthECAPI\\AuthECAPI.csproj|d:\\saurabh\\angular study\\.net core webapi with angular\\git\\project\\authecapi\\authecapi\\userdetails.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{30CA304F-4FA9-4B13-A460-C1B7671161BE}|AuthECAPI\\AuthECAPI.csproj|solutionrelative:authecapi\\userdetails.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{30CA304F-4FA9-4B13-A460-C1B7671161BE}|AuthECAPI\\AuthECAPI.csproj|d:\\saurabh\\angular study\\.net core webapi with angular\\git\\project\\authecapi\\authecapi\\extensions\\indentityextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{30CA304F-4FA9-4B13-A460-C1B7671161BE}|AuthECAPI\\AuthECAPI.csproj|solutionrelative:authecapi\\extensions\\indentityextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{30CA304F-4FA9-4B13-A460-C1B7671161BE}|AuthECAPI\\AuthECAPI.csproj|d:\\saurabh\\angular study\\.net core webapi with angular\\git\\project\\authecapi\\authecapi\\controllers\\identityuserendpoints.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{30CA304F-4FA9-4B13-A460-C1B7671161BE}|AuthECAPI\\AuthECAPI.csproj|solutionrelative:authecapi\\controllers\\identityuserendpoints.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{30CA304F-4FA9-4B13-A460-C1B7671161BE}|AuthECAPI\\AuthECAPI.csproj|d:\\saurabh\\angular study\\.net core webapi with angular\\git\\project\\authecapi\\authecapi\\controllers\\accountendpoints.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{30CA304F-4FA9-4B13-A460-C1B7671161BE}|AuthECAPI\\AuthECAPI.csproj|solutionrelative:authecapi\\controllers\\accountendpoints.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{30CA304F-4FA9-4B13-A460-C1B7671161BE}|AuthECAPI\\AuthECAPI.csproj|d:\\saurabh\\angular study\\.net core webapi with angular\\git\\project\\authecapi\\authecapi\\extensions\\appconfigextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{30CA304F-4FA9-4B13-A460-C1B7671161BE}|AuthECAPI\\AuthECAPI.csproj|solutionrelative:authecapi\\extensions\\appconfigextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{30CA304F-4FA9-4B13-A460-C1B7671161BE}|AuthECAPI\\AuthECAPI.csproj|d:\\saurabh\\angular study\\.net core webapi with angular\\git\\project\\authecapi\\authecapi\\controllers\\authorizationdemoendpoints.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{30CA304F-4FA9-4B13-A460-C1B7671161BE}|AuthECAPI\\AuthECAPI.csproj|solutionrelative:authecapi\\controllers\\authorizationdemoendpoints.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{30CA304F-4FA9-4B13-A460-C1B7671161BE}|AuthECAPI\\AuthECAPI.csproj|d:\\saurabh\\angular study\\.net core webapi with angular\\git\\project\\authecapi\\authecapi\\extensions\\efcoreextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{30CA304F-4FA9-4B13-A460-C1B7671161BE}|AuthECAPI\\AuthECAPI.csproj|solutionrelative:authecapi\\extensions\\efcoreextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{30CA304F-4FA9-4B13-A460-C1B7671161BE}|AuthECAPI\\AuthECAPI.csproj|d:\\saurabh\\angular study\\.net core webapi with angular\\git\\project\\authecapi\\authecapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{30CA304F-4FA9-4B13-A460-C1B7671161BE}|AuthECAPI\\AuthECAPI.csproj|solutionrelative:authecapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{30CA304F-4FA9-4B13-A460-C1B7671161BE}|AuthECAPI\\AuthECAPI.csproj|d:\\saurabh\\angular study\\.net core webapi with angular\\git\\project\\authecapi\\authecapi\\models\\appuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{30CA304F-4FA9-4B13-A460-C1B7671161BE}|AuthECAPI\\AuthECAPI.csproj|solutionrelative:authecapi\\models\\appuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{30CA304F-4FA9-4B13-A460-C1B7671161BE}|AuthECAPI\\AuthECAPI.csproj|d:\\saurabh\\angular study\\.net core webapi with angular\\git\\project\\authecapi\\authecapi\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{30CA304F-4FA9-4B13-A460-C1B7671161BE}|AuthECAPI\\AuthECAPI.csproj|solutionrelative:authecapi\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{30CA304F-4FA9-4B13-A460-C1B7671161BE}|AuthECAPI\\AuthECAPI.csproj|d:\\saurabh\\angular study\\.net core webapi with angular\\git\\project\\authecapi\\authecapi\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{30CA304F-4FA9-4B13-A460-C1B7671161BE}|AuthECAPI\\AuthECAPI.csproj|solutionrelative:authecapi\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{30CA304F-4FA9-4B13-A460-C1B7671161BE}|AuthECAPI\\AuthECAPI.csproj|d:\\saurabh\\angular study\\.net core webapi with angular\\git\\project\\authecapi\\authecapi\\extensions\\swaggerextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{30CA304F-4FA9-4B13-A460-C1B7671161BE}|AuthECAPI\\AuthECAPI.csproj|solutionrelative:authecapi\\extensions\\swaggerextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{30CA304F-4FA9-4B13-A460-C1B7671161BE}|AuthECAPI\\AuthECAPI.csproj|d:\\saurabh\\angular study\\.net core webapi with angular\\git\\project\\authecapi\\authecapi\\models\\appsettings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{30CA304F-4FA9-4B13-A460-C1B7671161BE}|AuthECAPI\\AuthECAPI.csproj|solutionrelative:authecapi\\models\\appsettings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{30CA304F-4FA9-4B13-A460-C1B7671161BE}|AuthECAPI\\AuthECAPI.csproj|d:\\saurabh\\angular study\\.net core webapi with angular\\git\\project\\authecapi\\authecapi\\models\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{30CA304F-4FA9-4B13-A460-C1B7671161BE}|AuthECAPI\\AuthECAPI.csproj|solutionrelative:authecapi\\models\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{30CA304F-4FA9-4B13-A460-C1B7671161BE}|AuthECAPI\\AuthECAPI.csproj|d:\\saurabh\\angular study\\.net core webapi with angular\\git\\project\\authecapi\\authecapi\\migrations\\20250212092407_initialmigration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{30CA304F-4FA9-4B13-A460-C1B7671161BE}|AuthECAPI\\AuthECAPI.csproj|solutionrelative:authecapi\\migrations\\20250212092407_initialmigration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{30CA304F-4FA9-4B13-A460-C1B7671161BE}|AuthECAPI\\AuthECAPI.csproj|d:\\saurabh\\angular study\\.net core webapi with angular\\git\\project\\authecapi\\authecapi\\authecapi.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{30CA304F-4FA9-4B13-A460-C1B7671161BE}|AuthECAPI\\AuthECAPI.csproj|solutionrelative:authecapi\\authecapi.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{30CA304F-4FA9-4B13-A460-C1B7671161BE}|AuthECAPI\\AuthECAPI.csproj|d:\\saurabh\\angular study\\.net core webapi with angular\\git\\project\\authecapi\\authecapi\\weatherforecast.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{30CA304F-4FA9-4B13-A460-C1B7671161BE}|AuthECAPI\\AuthECAPI.csproj|solutionrelative:authecapi\\weatherforecast.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{30CA304F-4FA9-4B13-A460-C1B7671161BE}|AuthECAPI\\AuthECAPI.csproj|d:\\saurabh\\angular study\\.net core webapi with angular\\git\\project\\authecapi\\authecapi\\controllers\\weatherforecastcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{30CA304F-4FA9-4B13-A460-C1B7671161BE}|AuthECAPI\\AuthECAPI.csproj|solutionrelative:authecapi\\controllers\\weatherforecastcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{30CA304F-4FA9-4B13-A460-C1B7671161BE}|AuthECAPI\\AuthECAPI.csproj|d:\\saurabh\\angular study\\.net core webapi with angular\\git\\project\\authecapi\\authecapi\\migrations\\20250212103355_nameisaddedinuserentity2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{30CA304F-4FA9-4B13-A460-C1B7671161BE}|AuthECAPI\\AuthECAPI.csproj|solutionrelative:authecapi\\migrations\\20250212103355_nameisaddedinuserentity2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{30CA304F-4FA9-4B13-A460-C1B7671161BE}|AuthECAPI\\AuthECAPI.csproj|d:\\saurabh\\angular study\\.net core webapi with angular\\git\\project\\authecapi\\authecapi\\migrations\\20250212103210_nameisaddedinuserentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{30CA304F-4FA9-4B13-A460-C1B7671161BE}|AuthECAPI\\AuthECAPI.csproj|solutionrelative:authecapi\\migrations\\20250212103210_nameisaddedinuserentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{30CA304F-4FA9-4B13-A460-C1B7671161BE}|AuthECAPI\\AuthECAPI.csproj|d:\\saurabh\\angular study\\.net core webapi with angular\\git\\project\\authecapi\\authecapi\\migrations\\20250314074644_addedgenderdoblibraryid.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{30CA304F-4FA9-4B13-A460-C1B7671161BE}|AuthECAPI\\AuthECAPI.csproj|solutionrelative:authecapi\\migrations\\20250314074644_addedgenderdoblibraryid.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "userdetails.json",
+              "DocumentMoniker": "D:\\Saurabh\\Angular Study\\.Net Core WebAPI With Angular\\Git\\Project\\AuthECAPI\\AuthECAPI\\userdetails.json",
+              "RelativeDocumentMoniker": "AuthECAPI\\userdetails.json",
+              "ToolTip": "D:\\Saurabh\\Angular Study\\.Net Core WebAPI With Angular\\Git\\Project\\AuthECAPI\\AuthECAPI\\userdetails.json",
+              "RelativeToolTip": "AuthECAPI\\userdetails.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-03-14T08:07:53.858Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "IdentityUserEndpoints.cs",
+              "DocumentMoniker": "D:\\Saurabh\\Angular Study\\.Net Core WebAPI With Angular\\Git\\Project\\AuthECAPI\\AuthECAPI\\Controllers\\IdentityUserEndpoints.cs",
+              "RelativeDocumentMoniker": "AuthECAPI\\Controllers\\IdentityUserEndpoints.cs",
+              "ToolTip": "D:\\Saurabh\\Angular Study\\.Net Core WebAPI With Angular\\Git\\Project\\AuthECAPI\\AuthECAPI\\Controllers\\IdentityUserEndpoints.cs",
+              "RelativeToolTip": "AuthECAPI\\Controllers\\IdentityUserEndpoints.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAF8AAAA3AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-02T17:53:03.356Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "IndentityExtensions.cs",
+              "DocumentMoniker": "D:\\Saurabh\\Angular Study\\.Net Core WebAPI With Angular\\Git\\Project\\AuthECAPI\\AuthECAPI\\Extensions\\IndentityExtensions.cs",
+              "RelativeDocumentMoniker": "AuthECAPI\\Extensions\\IndentityExtensions.cs",
+              "ToolTip": "D:\\Saurabh\\Angular Study\\.Net Core WebAPI With Angular\\Git\\Project\\AuthECAPI\\AuthECAPI\\Extensions\\IndentityExtensions.cs",
+              "RelativeToolTip": "AuthECAPI\\Extensions\\IndentityExtensions.cs",
+              "ViewState": "AgIAACYAAAAAAAAAAAA3wD0AAAAwAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-02T15:22:05.988Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "AuthorizationDemoEndpoints.cs",
+              "DocumentMoniker": "D:\\Saurabh\\Angular Study\\.Net Core WebAPI With Angular\\Git\\Project\\AuthECAPI\\AuthECAPI\\Controllers\\AuthorizationDemoEndpoints.cs",
+              "RelativeDocumentMoniker": "AuthECAPI\\Controllers\\AuthorizationDemoEndpoints.cs",
+              "ToolTip": "D:\\Saurabh\\Angular Study\\.Net Core WebAPI With Angular\\Git\\Project\\AuthECAPI\\AuthECAPI\\Controllers\\AuthorizationDemoEndpoints.cs",
+              "RelativeToolTip": "AuthECAPI\\Controllers\\AuthorizationDemoEndpoints.cs",
+              "ViewState": "AgIAABUAAAAAAAAAAAAAACAAAAAsAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-20T08:26:17.795Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "EFCoreExtensions.cs",
+              "DocumentMoniker": "D:\\Saurabh\\Angular Study\\.Net Core WebAPI With Angular\\Git\\Project\\AuthECAPI\\AuthECAPI\\Extensions\\EFCoreExtensions.cs",
+              "RelativeDocumentMoniker": "AuthECAPI\\Extensions\\EFCoreExtensions.cs",
+              "ToolTip": "D:\\Saurabh\\Angular Study\\.Net Core WebAPI With Angular\\Git\\Project\\AuthECAPI\\AuthECAPI\\Extensions\\EFCoreExtensions.cs",
+              "RelativeToolTip": "AuthECAPI\\Extensions\\EFCoreExtensions.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-27T17:56:40.879Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\Saurabh\\Angular Study\\.Net Core WebAPI With Angular\\Git\\Project\\AuthECAPI\\AuthECAPI\\Program.cs",
+              "RelativeDocumentMoniker": "AuthECAPI\\Program.cs",
+              "ToolTip": "D:\\Saurabh\\Angular Study\\.Net Core WebAPI With Angular\\Git\\Project\\AuthECAPI\\AuthECAPI\\Program.cs",
+              "RelativeToolTip": "AuthECAPI\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEgAAAAkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-09T18:43:13.316Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "AccountEndpoints.cs",
+              "DocumentMoniker": "D:\\Saurabh\\Angular Study\\.Net Core WebAPI With Angular\\Git\\Project\\AuthECAPI\\AuthECAPI\\Controllers\\AccountEndpoints.cs",
+              "RelativeDocumentMoniker": "AuthECAPI\\Controllers\\AccountEndpoints.cs",
+              "ToolTip": "D:\\Saurabh\\Angular Study\\.Net Core WebAPI With Angular\\Git\\Project\\AuthECAPI\\AuthECAPI\\Controllers\\AccountEndpoints.cs",
+              "RelativeToolTip": "AuthECAPI\\Controllers\\AccountEndpoints.cs",
+              "ViewState": "AgIAABMAAAAAAAAAAAAQwBYAAABEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-03T18:45:30.465Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "AppConfigExtensions.cs",
+              "DocumentMoniker": "D:\\Saurabh\\Angular Study\\.Net Core WebAPI With Angular\\Git\\Project\\AuthECAPI\\AuthECAPI\\Extensions\\AppConfigExtensions.cs",
+              "RelativeDocumentMoniker": "AuthECAPI\\Extensions\\AppConfigExtensions.cs",
+              "ToolTip": "D:\\Saurabh\\Angular Study\\.Net Core WebAPI With Angular\\Git\\Project\\AuthECAPI\\AuthECAPI\\Extensions\\AppConfigExtensions.cs",
+              "RelativeToolTip": "AuthECAPI\\Extensions\\AppConfigExtensions.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-02T15:18:42.115Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "AppUser.cs",
+              "DocumentMoniker": "D:\\Saurabh\\Angular Study\\.Net Core WebAPI With Angular\\Git\\Project\\AuthECAPI\\AuthECAPI\\Models\\AppUser.cs",
+              "RelativeDocumentMoniker": "AuthECAPI\\Models\\AppUser.cs",
+              "ToolTip": "D:\\Saurabh\\Angular Study\\.Net Core WebAPI With Angular\\Git\\Project\\AuthECAPI\\AuthECAPI\\Models\\AppUser.cs",
+              "RelativeToolTip": "AuthECAPI\\Models\\AppUser.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABEAAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-12T10:29:22.866Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "20250314074644_AddedGenderDOBLibraryID.cs",
+              "DocumentMoniker": "D:\\Saurabh\\Angular Study\\.Net Core WebAPI With Angular\\Git\\Project\\AuthECAPI\\AuthECAPI\\Migrations\\20250314074644_AddedGenderDOBLibraryID.cs",
+              "RelativeDocumentMoniker": "AuthECAPI\\Migrations\\20250314074644_AddedGenderDOBLibraryID.cs",
+              "ToolTip": "D:\\Saurabh\\Angular Study\\.Net Core WebAPI With Angular\\Git\\Project\\AuthECAPI\\AuthECAPI\\Migrations\\20250314074644_AddedGenderDOBLibraryID.cs",
+              "RelativeToolTip": "AuthECAPI\\Migrations\\20250314074644_AddedGenderDOBLibraryID.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-14T07:46:45.212Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "D:\\Saurabh\\Angular Study\\.Net Core WebAPI With Angular\\Git\\Project\\AuthECAPI\\AuthECAPI\\appsettings.json",
+              "RelativeDocumentMoniker": "AuthECAPI\\appsettings.json",
+              "ToolTip": "D:\\Saurabh\\Angular Study\\.Net Core WebAPI With Angular\\Git\\Project\\AuthECAPI\\AuthECAPI\\appsettings.json",
+              "RelativeToolTip": "AuthECAPI\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAA8AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-02-09T19:01:30.516Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "appsettings.Development.json",
+              "DocumentMoniker": "D:\\Saurabh\\Angular Study\\.Net Core WebAPI With Angular\\Git\\Project\\AuthECAPI\\AuthECAPI\\appsettings.Development.json",
+              "RelativeDocumentMoniker": "AuthECAPI\\appsettings.Development.json",
+              "ToolTip": "D:\\Saurabh\\Angular Study\\.Net Core WebAPI With Angular\\Git\\Project\\AuthECAPI\\AuthECAPI\\appsettings.Development.json",
+              "RelativeToolTip": "AuthECAPI\\appsettings.Development.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-03-14T07:46:00.62Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "AppSettings.cs",
+              "DocumentMoniker": "D:\\Saurabh\\Angular Study\\.Net Core WebAPI With Angular\\Git\\Project\\AuthECAPI\\AuthECAPI\\Models\\AppSettings.cs",
+              "RelativeDocumentMoniker": "AuthECAPI\\Models\\AppSettings.cs",
+              "ToolTip": "D:\\Saurabh\\Angular Study\\.Net Core WebAPI With Angular\\Git\\Project\\AuthECAPI\\AuthECAPI\\Models\\AppSettings.cs",
+              "RelativeToolTip": "AuthECAPI\\Models\\AppSettings.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-02T15:52:17.71Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "SwaggerExtensions.cs",
+              "DocumentMoniker": "D:\\Saurabh\\Angular Study\\.Net Core WebAPI With Angular\\Git\\Project\\AuthECAPI\\AuthECAPI\\Extensions\\SwaggerExtensions.cs",
+              "RelativeDocumentMoniker": "AuthECAPI\\Extensions\\SwaggerExtensions.cs",
+              "ToolTip": "D:\\Saurabh\\Angular Study\\.Net Core WebAPI With Angular\\Git\\Project\\AuthECAPI\\AuthECAPI\\Extensions\\SwaggerExtensions.cs",
+              "RelativeToolTip": "AuthECAPI\\Extensions\\SwaggerExtensions.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAowB0AAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-05T17:58:38.99Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "20250212103210_NameIsAddedInUserEntity.cs",
+              "DocumentMoniker": "D:\\Saurabh\\Angular Study\\.Net Core WebAPI With Angular\\Git\\Project\\AuthECAPI\\AuthECAPI\\Migrations\\20250212103210_NameIsAddedInUserEntity.cs",
+              "RelativeDocumentMoniker": "AuthECAPI\\Migrations\\20250212103210_NameIsAddedInUserEntity.cs",
+              "ToolTip": "D:\\Saurabh\\Angular Study\\.Net Core WebAPI With Angular\\Git\\Project\\AuthECAPI\\AuthECAPI\\Migrations\\20250212103210_NameIsAddedInUserEntity.cs",
+              "RelativeToolTip": "AuthECAPI\\Migrations\\20250212103210_NameIsAddedInUserEntity.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-12T10:32:10.429Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "WeatherForecastController.cs",
+              "DocumentMoniker": "D:\\Saurabh\\Angular Study\\.Net Core WebAPI With Angular\\Git\\Project\\AuthECAPI\\AuthECAPI\\Controllers\\WeatherForecastController.cs",
+              "RelativeDocumentMoniker": "AuthECAPI\\Controllers\\WeatherForecastController.cs",
+              "ToolTip": "D:\\Saurabh\\Angular Study\\.Net Core WebAPI With Angular\\Git\\Project\\AuthECAPI\\AuthECAPI\\Controllers\\WeatherForecastController.cs",
+              "RelativeToolTip": "AuthECAPI\\Controllers\\WeatherForecastController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAuAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-12T09:26:52.541Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "20250212092407_InitialMigration.cs",
+              "DocumentMoniker": "D:\\Saurabh\\Angular Study\\.Net Core WebAPI With Angular\\Git\\Project\\AuthECAPI\\AuthECAPI\\Migrations\\20250212092407_InitialMigration.cs",
+              "RelativeDocumentMoniker": "AuthECAPI\\Migrations\\20250212092407_InitialMigration.cs",
+              "ToolTip": "D:\\Saurabh\\Angular Study\\.Net Core WebAPI With Angular\\Git\\Project\\AuthECAPI\\AuthECAPI\\Migrations\\20250212092407_InitialMigration.cs",
+              "RelativeToolTip": "AuthECAPI\\Migrations\\20250212092407_InitialMigration.cs",
+              "ViewState": "AgIAAHAAAAAAAAAAAAAQwHcAAABJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-12T09:24:08.567Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "AuthECAPI.csproj",
+              "DocumentMoniker": "D:\\Saurabh\\Angular Study\\.Net Core WebAPI With Angular\\Git\\Project\\AuthECAPI\\AuthECAPI\\AuthECAPI.csproj",
+              "RelativeDocumentMoniker": "AuthECAPI\\AuthECAPI.csproj",
+              "ToolTip": "D:\\Saurabh\\Angular Study\\.Net Core WebAPI With Angular\\Git\\Project\\AuthECAPI\\AuthECAPI\\AuthECAPI.csproj",
+              "RelativeToolTip": "AuthECAPI\\AuthECAPI.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-02-12T09:20:50.509Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "20250212103355_NameIsAddedInUserEntity2.cs",
+              "DocumentMoniker": "D:\\Saurabh\\Angular Study\\.Net Core WebAPI With Angular\\Git\\Project\\AuthECAPI\\AuthECAPI\\Migrations\\20250212103355_NameIsAddedInUserEntity2.cs",
+              "RelativeDocumentMoniker": "AuthECAPI\\Migrations\\20250212103355_NameIsAddedInUserEntity2.cs",
+              "ToolTip": "D:\\Saurabh\\Angular Study\\.Net Core WebAPI With Angular\\Git\\Project\\AuthECAPI\\AuthECAPI\\Migrations\\20250212103355_NameIsAddedInUserEntity2.cs",
+              "RelativeToolTip": "AuthECAPI\\Migrations\\20250212103355_NameIsAddedInUserEntity2.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-12T10:33:55.583Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "AppDbContext.cs",
+              "DocumentMoniker": "D:\\Saurabh\\Angular Study\\.Net Core WebAPI With Angular\\Git\\Project\\AuthECAPI\\AuthECAPI\\Models\\AppDbContext.cs",
+              "RelativeDocumentMoniker": "AuthECAPI\\Models\\AppDbContext.cs",
+              "ToolTip": "D:\\Saurabh\\Angular Study\\.Net Core WebAPI With Angular\\Git\\Project\\AuthECAPI\\AuthECAPI\\Models\\AppDbContext.cs",
+              "RelativeToolTip": "AuthECAPI\\Models\\AppDbContext.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwA4AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-09T18:54:46.599Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "WeatherForecast.cs",
+              "DocumentMoniker": "D:\\Saurabh\\Angular Study\\.Net Core WebAPI With Angular\\Git\\Project\\AuthECAPI\\AuthECAPI\\WeatherForecast.cs",
+              "RelativeDocumentMoniker": "AuthECAPI\\WeatherForecast.cs",
+              "ToolTip": "D:\\Saurabh\\Angular Study\\.Net Core WebAPI With Angular\\Git\\Project\\AuthECAPI\\AuthECAPI\\WeatherForecast.cs",
+              "RelativeToolTip": "AuthECAPI\\WeatherForecast.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-12T10:20:12.608Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

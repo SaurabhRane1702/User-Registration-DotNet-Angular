@@ -1,0 +1,27 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.12.35707.178
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AuthECAPI", "AuthECAPI\AuthECAPI.csproj", "{30CA304F-4FA9-4B13-A460-C1B7671161BE}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{7E27148A-DD2E-4C02-B00C-5C11831303F5}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{30CA304F-4FA9-4B13-A460-C1B7671161BE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{30CA304F-4FA9-4B13-A460-C1B7671161BE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{30CA304F-4FA9-4B13-A460-C1B7671161BE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{30CA304F-4FA9-4B13-A460-C1B7671161BE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
