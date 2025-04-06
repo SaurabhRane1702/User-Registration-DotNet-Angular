@@ -9,7 +9,7 @@ import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
   styles: ``,
 })
 export class ForgotPasswordComponent {
-  isSubmitted: Boolean = false;
+  isSubmitted: boolean = false;
 
   constructor(public formBuilder: FormBuilder) {}
   form = this.formBuilder.group({
