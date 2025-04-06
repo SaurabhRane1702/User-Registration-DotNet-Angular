@@ -1,3 +1,4 @@
+import { ForgotPasswordComponent } from './user/forgot-password/forgot-password.component';
 import { Routes } from '@angular/router';
 import { UserComponent } from './user/user.component';
 import { RegistrationComponent } from './user/registration/registration.component';
@@ -21,7 +22,7 @@ export const routes: Routes = [
     children: [
       { path: 'signup', component: RegistrationComponent },
       { path: 'signin', component: LoginComponent },
-      { path: 'forgotpassword', component: RegistrationComponent },
+      { path: 'forgotpassword', component: ForgotPasswordComponent },
     ],
   },
   {

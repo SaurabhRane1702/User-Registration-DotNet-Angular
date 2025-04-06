@@ -26,6 +26,9 @@ export class AuthService {
     return this.http.post(this.baseUrl + '/signin', formData);
   }
 
+  forgotPassword(formData: any) {
+    return this.http.post(this.baseUrl + '/forgotpassword', formData);
+  }
   getToken() {
     return localStorage.getItem(TOKEN_KEY);
   }

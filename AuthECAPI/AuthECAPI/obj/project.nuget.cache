@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "jXqbUC3dMFM=",
+  "dgSpecHash": "qhwhiV/dyBg=",
   "success": true,
-  "projectFilePath": "D:\\Saurabh\\Angular Study\\.Net Core WebAPI With Angular\\Git\\Project\\AuthECAPI\\AuthECAPI\\AuthECAPI.csproj",
+  "projectFilePath": "D:\\Saurabh\\Angular Study\\.Net Core WebAPI With Angular\\Git\\AuthECAPI\\AuthECAPI\\AuthECAPI.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\SAU_SAMMY\\.nuget\\packages\\azure.core\\1.35.0\\azure.core.1.35.0.nupkg.sha512",
     "C:\\Users\\SAU_SAMMY\\.nuget\\packages\\azure.identity\\1.10.3\\azure.identity.1.10.3.nupkg.sha512",

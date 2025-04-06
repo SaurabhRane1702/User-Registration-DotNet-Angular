@@ -37,6 +37,8 @@ namespace AuthECAPI.Controllers
             //app.MapPost("api/signin", SignIn);
             app.MapPost("/signin", SignIn);
 
+            app.MapPost("/forgotpassword", ForgotPassword);
+
             return app;
         }
 
@@ -106,7 +108,15 @@ namespace AuthECAPI.Controllers
             {
                 return Results.BadRequest(new { message = "Username or password is incorrect." });
             }
-
         }
+
+        [AllowAnonymous]
+
+        private static IResult ForgotPassword()
+        {
+
+            return Results.Ok(new { message = "Password changed " });
+        }
+
     }
 }
