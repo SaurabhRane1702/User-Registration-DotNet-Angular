@@ -490,6 +490,18 @@
         }
       }
     },
+    "/api/forgotpassword": {
+      "post": {
+        "tags": [
+          "IdentityUserEndpoints"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/WeatherForecast": {
       "get": {
         "tags": [

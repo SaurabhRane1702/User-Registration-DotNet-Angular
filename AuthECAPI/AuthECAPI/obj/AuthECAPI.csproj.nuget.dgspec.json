@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Saurabh\\Angular Study\\.Net Core WebAPI With Angular\\Git\\Project\\AuthECAPI\\AuthECAPI\\AuthECAPI.csproj": {}
+    "D:\\Saurabh\\Angular Study\\.Net Core WebAPI With Angular\\Git\\AuthECAPI\\AuthECAPI\\AuthECAPI.csproj": {}
   },
   "projects": {
-    "D:\\Saurabh\\Angular Study\\.Net Core WebAPI With Angular\\Git\\Project\\AuthECAPI\\AuthECAPI\\AuthECAPI.csproj": {
+    "D:\\Saurabh\\Angular Study\\.Net Core WebAPI With Angular\\Git\\AuthECAPI\\AuthECAPI\\AuthECAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Saurabh\\Angular Study\\.Net Core WebAPI With Angular\\Git\\Project\\AuthECAPI\\AuthECAPI\\AuthECAPI.csproj",
+        "projectUniqueName": "D:\\Saurabh\\Angular Study\\.Net Core WebAPI With Angular\\Git\\AuthECAPI\\AuthECAPI\\AuthECAPI.csproj",
         "projectName": "AuthECAPI",
-        "projectPath": "D:\\Saurabh\\Angular Study\\.Net Core WebAPI With Angular\\Git\\Project\\AuthECAPI\\AuthECAPI\\AuthECAPI.csproj",
+        "projectPath": "D:\\Saurabh\\Angular Study\\.Net Core WebAPI With Angular\\Git\\AuthECAPI\\AuthECAPI\\AuthECAPI.csproj",
         "packagesPath": "C:\\Users\\SAU_SAMMY\\.nuget\\packages\\",
-        "outputPath": "D:\\Saurabh\\Angular Study\\.Net Core WebAPI With Angular\\Git\\Project\\AuthECAPI\\AuthECAPI\\obj\\",
+        "outputPath": "D:\\Saurabh\\Angular Study\\.Net Core WebAPI With Angular\\Git\\AuthECAPI\\AuthECAPI\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
