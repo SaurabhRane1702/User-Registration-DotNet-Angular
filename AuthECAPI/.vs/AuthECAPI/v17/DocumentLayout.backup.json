@@ -3,8 +3,16 @@
   "WorkspaceRootPath": "D:\\Saurabh\\Angular Study\\.Net Core WebAPI With Angular\\Git\\AuthECAPI\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{30CA304F-4FA9-4B13-A460-C1B7671161BE}|AuthECAPI\\AuthECAPI.csproj|d:\\saurabh\\angular study\\.net core webapi with angular\\git\\authecapi\\authecapi\\userdetails.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{30CA304F-4FA9-4B13-A460-C1B7671161BE}|AuthECAPI\\AuthECAPI.csproj|solutionrelative:authecapi\\userdetails.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{30CA304F-4FA9-4B13-A460-C1B7671161BE}|AuthECAPI\\AuthECAPI.csproj|d:\\saurabh\\angular study\\.net core webapi with angular\\git\\authecapi\\authecapi\\controllers\\identityuserendpoints.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{30CA304F-4FA9-4B13-A460-C1B7671161BE}|AuthECAPI\\AuthECAPI.csproj|solutionrelative:authecapi\\controllers\\identityuserendpoints.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{30CA304F-4FA9-4B13-A460-C1B7671161BE}|AuthECAPI\\AuthECAPI.csproj|d:\\saurabh\\angular study\\.net core webapi with angular\\git\\authecapi\\authecapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{30CA304F-4FA9-4B13-A460-C1B7671161BE}|AuthECAPI\\AuthECAPI.csproj|solutionrelative:authecapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -14,20 +22,44 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\Saurabh\\Angular Study\\.Net Core WebAPI With Angular\\Git\\AuthECAPI\\AuthECAPI\\Program.cs",
+              "RelativeDocumentMoniker": "AuthECAPI\\Program.cs",
+              "ToolTip": "D:\\Saurabh\\Angular Study\\.Net Core WebAPI With Angular\\Git\\AuthECAPI\\AuthECAPI\\Program.cs",
+              "RelativeToolTip": "AuthECAPI\\Program.cs",
+              "ViewState": "AgIAADQAAAAAAAAAAAAtwD0AAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-06T11:59:56.568Z"
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "userdetails.json",
+              "DocumentMoniker": "D:\\Saurabh\\Angular Study\\.Net Core WebAPI With Angular\\Git\\AuthECAPI\\AuthECAPI\\userdetails.json",
+              "RelativeDocumentMoniker": "AuthECAPI\\userdetails.json",
+              "ToolTip": "D:\\Saurabh\\Angular Study\\.Net Core WebAPI With Angular\\Git\\AuthECAPI\\AuthECAPI\\userdetails.json",
+              "RelativeToolTip": "AuthECAPI\\userdetails.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-04-04T13:02:26.407Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "IdentityUserEndpoints.cs",
               "DocumentMoniker": "D:\\Saurabh\\Angular Study\\.Net Core WebAPI With Angular\\Git\\AuthECAPI\\AuthECAPI\\Controllers\\IdentityUserEndpoints.cs",
               "RelativeDocumentMoniker": "AuthECAPI\\Controllers\\IdentityUserEndpoints.cs",
               "ToolTip": "D:\\Saurabh\\Angular Study\\.Net Core WebAPI With Angular\\Git\\AuthECAPI\\AuthECAPI\\Controllers\\IdentityUserEndpoints.cs",
               "RelativeToolTip": "AuthECAPI\\Controllers\\IdentityUserEndpoints.cs",
-              "ViewState": "AgIAABkAAAAAAAAAAAAgwB4AAAAjAAAAAAAAAA==",
+              "ViewState": "AgIAACEAAAAAAAAAAAA5wC8AAAArAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-04T12:58:00.056Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-04T12:58:00.056Z"
             }
           ]
         }
