@@ -7,6 +7,7 @@ using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace AuthECAPI.Controllers
 {
@@ -26,6 +27,13 @@ namespace AuthECAPI.Controllers
         public string Email { get; set; }
         public string Password { get; set; }
     }
+
+    public class PasswordModel
+    {
+        public string Email { get; set; }
+        public string OldPassword { get; set; }
+        public string NewPassword { get; set; }
+    }
     public static class IdentityUserEndpoints
     {
         public static IEndpointRouteBuilder MapIdentityUserEndpoints(this IEndpointRouteBuilder app)
@@ -37,7 +45,7 @@ namespace AuthECAPI.Controllers
             //app.MapPost("api/signin", SignIn);
             app.MapPost("/signin", SignIn);
 
-            app.MapPost("/forgotpassword", ForgotPassword);
+            app.MapPost("/forgotpasswordwithemail", ForgotPassword);
 
             return app;
         }
@@ -112,10 +120,27 @@ namespace AuthECAPI.Controllers
 
         [AllowAnonymous]
 
-        private static IResult ForgotPassword()
+        private static async Task<IResult> ForgotPassword(UserManager<AppUser> userManager,
+                [FromBody] PasswordModel passwordModel)
         {
-
-            return Results.Ok(new { message = "Password changed " });
+            var user = await userManager.FindByEmailAsync(passwordModel.Email);
+            if(user != null)
+            {
+                var result = await userManager.ChangePasswordAsync(user,passwordModel.OldPassword,passwordModel.NewPassword);
+                if (result.Succeeded)
+                {
+                    return Results.Ok(result);
+                }
+                else
+                {
+                    return Results.BadRequest(result);
+                }
+            }
+            else
+            {
+                return Results.BadRequest(new {message = "User name incorrect"});
+            }
+            //return Results.Ok(new { message = "Password changed " });
         }
 
     }
