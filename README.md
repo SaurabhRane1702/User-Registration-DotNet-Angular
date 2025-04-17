@@ -2,7 +2,7 @@
  
 Readme
 
-#AuthAPI
+#AuthECAPI
 Add Below NPM packages 
 1. Microsoft.EntityFrameworkCOre.SqlServer
 2. Microsoft.EntityFramewoekCore.Design
