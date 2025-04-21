@@ -30,3 +30,5 @@ VALUES
 GO
 
 ## AuthECClient
+Made use of JWT for authentication and guards for authorization 
+Implemented Multi Step Angular Formwith multiple pages using shared service
