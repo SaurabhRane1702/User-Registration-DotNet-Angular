@@ -11,6 +11,7 @@ import { FirstKeyPipe } from '../../shared/pipes/first-key.pipe';
 import { AuthService } from '../../shared/services/auth.service';
 import { ToastrService } from 'ngx-toastr';
 import { Router, RouterLink } from '@angular/router';
+import { UserService } from '../../shared/services/user.service';
 
 @Component({
   selector: 'app-registration',
@@ -22,6 +23,7 @@ export class RegistrationComponent implements OnInit {
   constructor(
     public formBuilder: FormBuilder,
     private service: AuthService,
+    private userService: UserService,
     private router: Router,
     private toastr: ToastrService
   ) {}
@@ -59,44 +61,50 @@ export class RegistrationComponent implements OnInit {
     { validators: this.passWordMatchValidator }
   );
 
-  onSubmit() {
-    this.isSubmitted = true;
-    if (this.form.valid) {
-      this.service.createUser(this.form.value).subscribe({
-        next: (res: any) => {
-          if (res.succeeded) {
-            this.form.reset();
-            this.isSubmitted = false;
-            this.toastr.success('New user Created', 'Registration Successful');
-          }
-        },
-        error: (err) => {
-          if (err.error.errors) {
-            err.error.errors.forEach((x: any) => {
-              switch (x.code) {
-                case 'DuplicateUserName':
-                  break;
-                case 'DuplicateEmail':
-                  this.toastr.error(
-                    'Email is already taken',
-                    'Registration Failed'
-                  );
-                  break;
-                default:
-                  this.toastr.error(
-                    'Something went wrong',
-                    'Registration Failed'
-                  );
-                  console.log(x);
-                  break;
-              }
-            });
-          } else console.log('error', err);
-        },
-      });
-      console.table(this.form.value);
+  nextStep() {
+    if(this.form.valid){
+      this.userService.updateData(this.form.value);
+      this.router.navigateByUrl('/additionalRegDetails');
     }
   }
+  // onSubmit() {
+  //   this.isSubmitted = true;
+  //   if (this.form.valid) {
+  //     this.service.createUser(this.form.value).subscribe({
+  //       next: (res: any) => {
+  //         if (res.succeeded) {
+  //           this.form.reset();
+  //           this.isSubmitted = false;
+  //           this.toastr.success('New user Created', 'Registration Successful');
+  //         }
+  //       },
+  //       error: (err) => {
+  //         if (err.error.errors) {
+  //           err.error.errors.forEach((x: any) => {
+  //             switch (x.code) {
+  //               case 'DuplicateUserName':
+  //                 break;
+  //               case 'DuplicateEmail':
+  //                 this.toastr.error(
+  //                   'Email is already taken',
+  //                   'Registration Failed'
+  //                 );
+  //                 break;
+  //               default:
+  //                 this.toastr.error(
+  //                   'Something went wrong',
+  //                   'Registration Failed'
+  //                 );
+  //                 console.log(x);
+  //                 break;
+  //             }
+  //           });
+  //         } else console.log('error', err);
+  //       },
+  //     });
+  //     console.table(this.form.value);
+  //   }
+  //}
 
   hasDisplayableError(controlName: string): Boolean {
     const control = this.form.get(controlName);
