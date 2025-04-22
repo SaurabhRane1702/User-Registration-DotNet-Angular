@@ -29,6 +29,23 @@ VALUES
     (3, 'Student', 'STUDENT', NULL);
 GO
 
-## AuthECClient
-Made use of JWT for authentication and guards for authorization 
-Implemented Multi Step Angular Formwith multiple pages using shared service
+# AuthECClient
+
+AuthECClient is a feature-rich application that incorporates robust authentication and authorization mechanisms, along with a dynamic multi-step form built using Angular. 
+
+## Features
+
+### Authentication & Authorization
+- **JWT Authentication**: Secure authentication using JSON Web Tokens (JWT).
+- **Guards for Authorization**: Implemented Angular guards to control access to different parts of the application based on user roles and permissions.
+
+### Multi-Step Angular Form
+- **Dynamic Multi-Step Form**: Created a multi-page form workflow that allows users to navigate through multiple steps seamlessly.
+- **Shared Services with BehaviorSubject**: Utilized Angular's shared services along with `BehaviorSubject` for managing state across different steps of the form, ensuring smooth data flow and interaction between components.
+
+## Highlights
+- Leveraged modern authentication techniques to secure the application.
+- Designed an intuitive and user-friendly multi-step form process.
+- Ensured modularity and reusability of components with shared services.
+
+Feel free to explore the project and contribute!
