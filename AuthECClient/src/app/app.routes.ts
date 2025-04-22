@@ -13,6 +13,7 @@ import { Under10AndFemaleComponent } from './authorizeDemo/under10-and-female/un
 import { MainLayoutComponent } from './layouts/main-layout/main-layout.component';
 import { ForbiddenComponent } from './forbidden/forbidden.component';
 import { claimReq } from './shared/utils/claimReq-utils';
+import { AdditionalRegistrationDetailsComponent } from './user/registration/additional-registration-details/additional-registration-details.component';
 
 export const routes: Routes = [
   { path: '', redirectTo: '/signin', pathMatch: 'full' },
@@ -23,6 +24,7 @@ export const routes: Routes = [
       { path: 'signup', component: RegistrationComponent },
       { path: 'signin', component: LoginComponent },
       { path: 'forgotpassword', component: ForgotPasswordComponent },
+      {path: 'additionalRegDetails', component: AdditionalRegistrationDetailsComponent},
     ],
   },
   {
