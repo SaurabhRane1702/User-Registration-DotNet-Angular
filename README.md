@@ -29,6 +29,10 @@ VALUES
     (3, 'Student', 'STUDENT', NULL);
 GO
 
+Different Angular Features used in the this solution 
+1. The solution leverages Angular's advanced capabilities by implementing custom directives to enable role-based access control. These directives dynamically evaluate the user's claims, specifically the 'Role' attribute, to determine and restrict access to specific UI elements based on authorization rules.
+
+   
 # AuthECClient
 
 AuthECClient is a feature-rich application that incorporates robust authentication and authorization mechanisms, along with a dynamic multi-step form built using Angular. 
