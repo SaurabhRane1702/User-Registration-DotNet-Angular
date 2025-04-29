@@ -17,7 +17,7 @@ export class AuthService {
     //to update these details of the User
     //--TODO End
     console.log('formData before over right', formData);
-    formData.role = 'Teacher';
+    //formData.role = 'Teacher';
     //formData.gender = 'Female';
     //formData.age = 35;
     return this.http.post(this.baseUrl + '/signup', formData);

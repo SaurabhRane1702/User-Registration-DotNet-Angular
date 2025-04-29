@@ -60,38 +60,39 @@ constructor(
       // })
       const mergedForm = {...this.userService.getData(),...this.formAdditional.value};
       console.table(mergedForm);
-      // this.service.createUser(mergedForm).subscribe({
-      //   next: (res: any) => {
-      //     if (res.succeeded) {
-      //       this.formAdditional.reset();
-      //       this.isSubmitted = false;
-      //       this.toastr.success('New user Created', 'Registration Successful');
-      //     }
-      //   },
-      //   error: (err) => {
-      //     if (err.error.errors) {
-      //       err.error.errors.forEach((x: any) => {
-      //         switch (x.code) {
-      //           case 'DuplicateUserName':
-      //             break;
-      //           case 'DuplicateEmail':
-      //             this.toastr.error(
-      //               'Email is already taken',
-      //               'Registration Failed'
-      //             );
-      //             break;
-      //           default:
-      //             this.toastr.error(
-      //               'Something went wrong',
-      //               'Registration Failed'
-      //             );
-      //             console.log(x);
-      //             break;
-      //         }
-      //       });
-      //     } else console.log('error', err);
-      //   },
-      // });
+      this.service.createUser(mergedForm).subscribe({
+        next: (res: any) => {
+          if (res.succeeded) {
+            this.formAdditional.reset();
+            this.isSubmitted = false;
+            this.toastr.success('New user Created', 'Registration Successful');
+            this.router.navigateByUrl('/signin');
+          }
+        },
+        error: (err) => {
+          if (err.error.errors) {
+            err.error.errors.forEach((x: any) => {
+              switch (x.code) {
+                case 'DuplicateUserName':
+                  break;
+                case 'DuplicateEmail':
+                  this.toastr.error(
+                    'Email is already taken',
+                    'Registration Failed'
+                  );
+                  break;
+                default:
+                  this.toastr.error(
+                    'Something went wrong',
+                    'Registration Failed'
+                  );
+                  console.log(x);
+                  break;
+              }
+            });
+          } else console.log('error', err);
+        },
+      });
       console.table(mergedForm);
     }
   }
