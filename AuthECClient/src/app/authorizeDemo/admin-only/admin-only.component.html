@@ -1,1 +1,96 @@
-<p>admin-only works!</p>
+<form [formGroup]="timetableForm" (ngSubmit)="onSave()">
+    <!-- <div class="mb-3">
+        <label for="exampleDataList" class="form-label">Select a Day</label>
+        <input class="form-control" list="datalistOptions" id="exampleDataList" placeholder="Type to search...">
+        <datalist id="datalistOptions">
+        <option value="San Francisco">
+        <option value="New York">
+        <option value="Seattle">
+        <option value="Los Angeles">
+        <option value="Chicago">
+        </datalist>
+    </div> -->
+    <div class="form-group mb-2">
+        <label class="mb-2" for="weekDayActivity">Select a Day</label>
+        <select id="weekDayActivity" class="form-control" formControlName="weekDayActivity">
+          <option *ngFor="let week of weekDays" [value]="week">{{ week }}</option>
+        </select>
+        <div *ngIf="timetableForm.get('weekDayActivity')?.invalid && timetableForm.get('weekDayActivity')?.touched" class="text-danger">
+          Day is required.
+        </div>
+    </div>
+
+    <div class="form-group mb-2">
+        <label class="mb-2" for="timeActivity">Select a Time</label>
+        <select id="timeActivity" class="form-control" formControlName="timeActivity">
+          <option *ngFor="let slot of timeSlots" [value]="slot">{{ slot }}</option>
+        </select>
+        <div *ngIf="timetableForm.get('timeActivity')?.invalid && timetableForm.get('timeActivity')?.touched" class="text-danger">
+          Time is required.
+        </div>
+    </div>
+
+    <div class="form-group mb-2">
+        <label class= "mb-2" for="subjectName">Subject Name</label>
+        <input
+          id="subjectName"
+          type="text"
+          class="form-control"
+          formControlName="subjectName"
+          placeholder="Enter subject name"
+        />
+        <div *ngIf="hasDisplayableError('subjectName')" class="text-danger">
+          Subject name is required and must be less than 50 characters.
+        </div>
+      </div>
+
+      <div class="form-group mb-2">
+        <label class= "mb-2" for="className">Class Name</label>
+        <input
+          id="className"
+          type="text"
+          class="form-control"
+          formControlName="className"
+          placeholder="Enter class name"
+        />
+        <div *ngIf="hasDisplayableError('className')" class="text-danger">
+          Subject name is required and must be less than 50 characters.
+        </div>
+      </div>
+
+      <div class="form-group mb-2">
+        <label class="mb-2" for="teacherSelection">Select a Teacher</label>
+        <select id="teacherSelection" class="form-control" formControlName="teacherSelection">
+          <option *ngFor="let teacher of teachers" [value]="teacher">{{ teacher }}</option>
+        </select>
+        <div *ngIf="hasDisplayableError('teacherSelection')" class="text-danger">
+          Teacher is required.
+        </div>
+    </div>
+
+    
+    <div class="form-group mb-3">
+      <label for="inputEmail" class="form-label">Email address of Student</label>
+      <input type="email" class="form-control" id="inputEmail" formControlName="inputEmail"
+      placeholder="Enter Email ID" aria-describedby="emailHelp">
+      <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+      <div *ngIf="hasDisplayableError('inputEmail') && timetableForm.get('inputEmail')?.hasError('required')" class="text-danger">
+        Email should be valid.
+      </div>
+    </div>
+    <!-- <div class="mb-3">
+      <label for="exampleInputPassword1" class="form-label">Password</label>
+      <input type="password" class="form-control" id="exampleInputPassword1">
+    </div>
+    <div class="mb-3 form-check">
+      <input type="checkbox" class="form-check-input" id="exampleCheck1">
+      <label class="form-check-label" for="exampleCheck1">Check me out</label>
+    </div> -->
+
+    <!-- Buttons -->
+    <div class="form-group mt-4">
+        <button type="submit" class="btn btn-primary" [disabled]="timetableForm.invalid">Save</button>
+        <button type="button" class="btn btn-secondary mx-2" (click)="onReset()">Reset</button>
+        <button type="button" class="btn btn-danger" (click)="onCancel()">Cancel</button>
+      </div>
+</form>

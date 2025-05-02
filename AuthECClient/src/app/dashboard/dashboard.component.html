@@ -4,4 +4,16 @@
   <button class="btn btn-danger" [appHideIfClaimsNotMet]="claimReq.adminOnly">
     Some Admin Operation
   </button>
+
+  <div [appHideIfClaimsNotMet]="claimReq.studentOnly">
+    <div class="schedule">
+      <h2>Today's Timetable</h2>
+      <div class="lecture-card" *ngFor="let lecture of lectures" [style.border-color]="lecture.color">
+        <h3>{{ lecture.subject }}</h3>
+        <p><strong>Teacher:</strong> {{ lecture.teacher }}</p>
+        <p><strong>Time:</strong> {{ lecture.time }}</p>
+        <p><strong>Duration:</strong> {{ lecture.duration }}</p>
+      </div>
+    </div>
+  </div>
 </div>

@@ -14,6 +14,7 @@ import { MainLayoutComponent } from './layouts/main-layout/main-layout.component
 import { ForbiddenComponent } from './forbidden/forbidden.component';
 import { claimReq } from './shared/utils/claimReq-utils';
 import { AdditionalRegistrationDetailsComponent } from './user/registration/additional-registration-details/additional-registration-details.component';
+import { AdminTimetableComponent } from './authorizeDemo/admin-only/admin-timetable/admin-timetable.component';
 
 export const routes: Routes = [
   { path: '', redirectTo: '/signin', pathMatch: 'full' },
@@ -40,6 +41,11 @@ export const routes: Routes = [
       {
         path: 'admin-only',
         component: AdminOnlyComponent,
+        data: { claimReq: claimReq.adminOnly },
+      },
+      {
+        path: 'admin-timeTable',
+        component: AdminTimetableComponent,
         data: { claimReq: claimReq.adminOnly },
       },
       {

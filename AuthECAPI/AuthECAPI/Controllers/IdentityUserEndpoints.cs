@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;
+using System.Reflection.Metadata.Ecma335;
 using System.Security.Claims;
 using System.Text;
 using System.Threading.Tasks;
@@ -34,6 +35,16 @@ namespace AuthECAPI.Controllers
         public string OldPassword { get; set; }
         public string NewPassword { get; set; }
     }
+
+    public class TimeTableModel
+    {
+        public string SubjectName { get; set; }
+        public string ClassName { get; set; }
+        public string InputEmail { get; set; }
+        public string TimeActivity { get; set; }
+        public string WeekDayActivity { get; set; }
+        public string TeacherSelection { get; set; }
+    }
     public static class IdentityUserEndpoints
     {
         public static IEndpointRouteBuilder MapIdentityUserEndpoints(this IEndpointRouteBuilder app)
@@ -46,6 +57,7 @@ namespace AuthECAPI.Controllers
             app.MapPost("/signin", SignIn);
 
             app.MapPost("/forgotpasswordwithemail", ForgotPassword);
+            app.MapPost("/addtimetable", AddTimeTable);
 
             return app;
         }
@@ -78,6 +90,7 @@ namespace AuthECAPI.Controllers
                 IOptions<AppSettings> appSettings)
         {
             var user = await userManager.FindByEmailAsync(loginModel.Email);
+            Console.WriteLine($"User data : ", user);
             if (user != null && await userManager.CheckPasswordAsync(user, loginModel.Password))
             {
                 var roles = await userManager.GetRolesAsync(user);
@@ -103,7 +116,7 @@ namespace AuthECAPI.Controllers
                 var tokenDescriptor = new SecurityTokenDescriptor
                 {
                     Subject = claimsIdentity,
-                    Expires = DateTime.Now.AddMinutes(1),
+                    Expires = DateTime.Now.AddMinutes(10),
                     SigningCredentials = new SigningCredentials(signInKey, SecurityAlgorithms.HmacSha256Signature)
                 };
 
@@ -142,6 +155,23 @@ namespace AuthECAPI.Controllers
             }
             //return Results.Ok(new { message = "Password changed " });
         }
+
+        private static async Task<IResult> AddTimeTable(UserManager<AppUser> userManager, [FromBody] TimeTableModel timeTableModel)
+        {
+            var user = await userManager.FindByEmailAsync(timeTableModel.InputEmail);
+            if(user != null)
+            {
+
+            }
+            else
+            {
+                return Results.BadRequest(new { message = "User Email incorrect" });
+            }
+
+            return Results.Ok(user);
+        }
+
+
 
     }
 }

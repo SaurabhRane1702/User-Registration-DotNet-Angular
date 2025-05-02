@@ -1,0 +1,97 @@
+<div class="container">
+    <h1>Add Timetable</h1>
+    <form [formGroup]="timetableForm" (ngSubmit)="onSave()">
+      <!-- Timetable Name -->
+      <div class="form-group">
+        <label for="timetableName">Timetable Name</label>
+        <input
+          id="timetableName"
+          type="text"
+          class="form-control"
+          formControlName="timetableName"
+          placeholder="Enter timetable name"
+        />
+        <div *ngIf="timetableForm.get('timetableName')?.invalid && timetableForm.get('timetableName')?.touched" class="text-danger">
+          Timetable name is required and must be less than 50 characters.
+        </div>
+      </div>
+  
+      <!-- Date Range -->
+      <div class="form-group">
+        <label>Date Range</label>
+        <div class="d-flex">
+          <input
+            type="date"
+            class="form-control"
+            formControlName="startDate"
+            placeholder="Start Date"
+          />
+          <span class="mx-2">to</span>
+          <input
+            type="date"
+            class="form-control"
+            formControlName="endDate"
+            placeholder="End Date"
+          />
+        </div>
+        <div *ngIf="timetableForm.get('dateRange')?.invalid && timetableForm.get('dateRange')?.touched" class="text-danger">
+          Both dates are required.
+        </div>
+      </div>
+  
+      <!-- Time Slots -->
+      <div class="form-group">
+        <label>Time Slots</label>
+        <select multiple class="form-control" formControlName="timeSlots">
+          <option *ngFor="let slot of timeSlots" [value]="slot">{{ slot }}</option>
+        </select>
+        <div *ngIf="timetableForm.get('timeSlots')?.invalid && timetableForm.get('timeSlots')?.touched" class="text-danger">
+          At least one time slot must be selected.
+        </div>
+      </div>
+  
+      <!-- Days of the Week -->
+      <div class="form-group">
+        <label>Days of the Week</label>
+        <div class="form-check" *ngFor="let day of weekDays">
+          <input
+            type="checkbox"
+            class="form-check-input"
+            [id]="day"
+            [value]="day"
+            (change)="toggleWeekDay(day, $event)"
+          />
+          <label [for]="day" class="form-check-label">{{ day }}</label>
+        </div>
+      </div>
+  
+      <!-- Assign Activities -->
+      <div class="form-group">
+        <label for="assignedActivity">Assign Activity</label>
+        <select id="assignedActivity" class="form-control" formControlName="assignedActivity">
+          <option *ngFor="let activity of activities" [value]="activity">{{ activity }}</option>
+        </select>
+        <div *ngIf="timetableForm.get('assignedActivity')?.invalid && timetableForm.get('assignedActivity')?.touched" class="text-danger">
+          Activity is required.
+        </div>
+      </div>
+  
+      <!-- Assign Staff -->
+      <div class="form-group">
+        <label for="assignedStaff">Assign Staff</label>
+        <select id="assignedStaff" class="form-control" formControlName="assignedStaff" multiple>
+          <option *ngFor="let staff of staffMembers" [value]="staff">{{ staff }}</option>
+        </select>
+        <div *ngIf="timetableForm.get('assignedStaff')?.invalid && timetableForm.get('assignedStaff')?.touched" class="text-danger">
+          At least one staff member must be selected.
+        </div>
+      </div>
+  
+      <!-- Buttons -->
+      <div class="form-group mt-4">
+        <button type="submit" class="btn btn-primary" [disabled]="timetableForm.invalid">Save</button>
+        <button type="button" class="btn btn-secondary mx-2" (click)="onReset()">Reset</button>
+        <button type="button" class="btn btn-danger" (click)="onCancel()">Cancel</button>
+      </div>
+    </form>
+  </div>

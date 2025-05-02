@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
 namespace AuthECAPI.Models
@@ -11,5 +12,6 @@ namespace AuthECAPI.Models
 
         public DbSet<AppUser> AppUsers { get; set; }
 
+        public DbSet<TimeTable> TimeTables { get; set; }
     }
 }

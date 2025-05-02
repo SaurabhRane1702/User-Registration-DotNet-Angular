@@ -4,15 +4,22 @@ import { Router } from '@angular/router';
 import { AuthService } from '../shared/services/auth.service';
 import { UserService } from '../shared/services/user.service';
 import { HideIfClaimsNotMetDirective } from '../shared/directives/hide-if-claims-not-met.directive';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-dashboard',
-  imports: [HideIfClaimsNotMetDirective],
+  imports: [HideIfClaimsNotMetDirective,CommonModule],
   templateUrl: './dashboard.component.html',
   styles: ``,
 })
 export class DashboardComponent implements OnInit {
   fullName: string = '';
+
+  currentDate = new Date();
+  studentName = 'John Doe';
+  libraryId = 'LIB12345';
+
+
   claimReq = claimReq;
   constructor(
     private router: Router,
@@ -30,4 +37,28 @@ export class DashboardComponent implements OnInit {
       },
     });
   }
+
+  lectures = [
+    {
+      subject: 'Mathematics',
+      teacher: 'Mr. John Doe',
+      time: '9:00 AM - 10:30 AM',
+      duration: '1 hour 30 minutes',
+      color: '#FFCDD2'
+    },
+    {
+      subject: 'Physics',
+      teacher: 'Ms. Jane Smith',
+      time: '10:45 AM - 12:15 PM',
+      duration: '1 hour 30 minutes',
+      color: '#C8E6C9'
+    },
+    {
+      subject: 'Chemistry',
+      teacher: 'Dr. Emily Clark',
+      time: '1:00 PM - 2:30 PM',
+      duration: '1 hour 30 minutes',
+      color: '#BBDEFB'
+    }
+  ];
 }

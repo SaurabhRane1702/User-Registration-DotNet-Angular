@@ -11,6 +11,9 @@
     <li class="nav-item" [appHideIfClaimsNotMet]="claimReq.adminOnly">
       <a routerLink="/admin-only" class="nav-link">Admin Only</a>
     </li>
+    <li class="nav-item" [appHideIfClaimsNotMet]="claimReq.adminOnly">
+      <a routerLink="/admin-timeTable" class="nav-link">Admin TimeTable</a>
+    </li>
     <li class="nav-item" [appHideIfClaimsNotMet]="claimReq.adminOrTeacher">
       <a routerLink="/admin-or-teacher" class="nav-link">Admin Or Teacher</a>
     </li>

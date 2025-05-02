@@ -47,4 +47,13 @@ export class UserService {
   clearData(){
     this.formData.next({});
   }
+
+  addTimeTable(formData : any){
+    console.log('FormData before calling service',formData.value);
+    const httpOptions = {
+      headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+    };
+
+    return this.http.post(this.baseUrl + '/addtimetable', formData, httpOptions);
+  }
 }
