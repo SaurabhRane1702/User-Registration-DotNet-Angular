@@ -117,7 +117,6 @@ export class AdminOnlyComponent implements OnInit {
     }
   
     onCancel(): void {
-      console.log('Cancel button clicked');
-      alert('Action canceled');
+      this.router.navigateByUrl('/dashboard');
     }
 }

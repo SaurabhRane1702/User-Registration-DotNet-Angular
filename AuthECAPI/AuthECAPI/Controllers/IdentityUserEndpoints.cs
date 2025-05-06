@@ -2,10 +2,12 @@
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;
 using System.Reflection.Metadata.Ecma335;
+using System.Runtime.CompilerServices;
 using System.Security.Claims;
 using System.Text;
 using System.Threading.Tasks;
@@ -58,6 +60,7 @@ namespace AuthECAPI.Controllers
 
             app.MapPost("/forgotpasswordwithemail", ForgotPassword);
             app.MapPost("/addtimetable", AddTimeTable);
+            app.MapGet("/fetchtimetable", FetchTimeTable);
 
             return app;
         }
@@ -156,12 +159,26 @@ namespace AuthECAPI.Controllers
             //return Results.Ok(new { message = "Password changed " });
         }
 
-        private static async Task<IResult> AddTimeTable(UserManager<AppUser> userManager, [FromBody] TimeTableModel timeTableModel)
+        [Authorize(Roles ="Admin")]
+        private static async Task<IResult> AddTimeTable(UserManager<AppUser> userManager, [FromBody] TimeTableModel timeTableModel, [FromServices] AppDbContext context)
         {
             var user = await userManager.FindByEmailAsync(timeTableModel.InputEmail);
-            if(user != null)
-            {
 
+            if (user != null)
+            {
+                var t = new TimeTable
+                {
+                    Subject = timeTableModel.SubjectName,
+                    Class = timeTableModel.ClassName,
+                    Day = timeTableModel.WeekDayActivity,
+                    Teacher = timeTableModel.TeacherSelection,
+                    Time = timeTableModel.TimeActivity,
+                    Email = timeTableModel.InputEmail,
+                    UserId = user.Id
+                };
+
+                context.TimeTables.Add(t);
+                await context.SaveChangesAsync();
             }
             else
             {
@@ -169,6 +186,36 @@ namespace AuthECAPI.Controllers
             }
 
             return Results.Ok(user);
+        }
+
+        [Authorize(Roles = "Teacher, Student")]
+        private static async Task<IResult> FetchTimeTable(ClaimsPrincipal user, [FromServices] AppDbContext context)
+        {
+            // Extract the userID from the claims
+            string userID = user.Claims.First(x => x.Type == "userID").Value;
+
+            // Query the TimeTable table to fetch records for the specific userID
+            var timeTables = await context.TimeTables
+                                          .Where(t => t.UserId == userID)
+                                          .Select(t => new
+                                          {
+                                              t.Subject,
+                                              t.Class,
+                                              t.Day,
+                                              t.Time,
+                                              t.Teacher
+                                          })
+                                          .ToListAsync();
+
+            // Check if any records were found, otherwise early return.
+            if (timeTables == null || timeTables.Count == 0)
+            {
+                return Results.BadRequest(new { message = "No time table found for this user." });
+            }
+            else
+            {
+                return Results.Ok(timeTables);
+            }
         }
 
 

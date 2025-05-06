@@ -14,9 +14,7 @@ namespace AuthECAPI.Models
         public string Subject { get; set; }
         public string Class { get; set; }
         public string Teacher { get; set; }
-        public string Room { get; set; }
-        public string Period { get; set; }
-        public string SubjectCode { get; set; }
+        public string Email { get; set; }
 
         [ForeignKey("UserId")]
         public IdentityUser IdentityUser { get; set; }
