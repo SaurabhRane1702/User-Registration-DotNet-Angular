@@ -10,6 +10,8 @@ This project implements Authorization and Authentication for Angular by calling 
 
 1. Implemented Early Return  Pattern.
 
+## Required Setup 
+
 ### Required NPM Packages
 Ensure the following NPM packages are installed:
 
