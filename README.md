@@ -6,7 +6,7 @@ This project implements Authorization and Authentication for Angular by calling 
 
 ## AuthECAPI
 
-##Features
+## Features
 
 1. Implemented Early Return  Pattern.
 
