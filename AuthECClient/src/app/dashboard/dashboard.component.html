@@ -1,11 +1,11 @@
 <div class="text-center">
   <h1 class="display-6">Welcome Aboard!</h1>
   <h1 class="display-6 fw-bolder text-dark">{{ fullName }}</h1>
-  <button class="btn btn-danger" [appHideIfClaimsNotMet]="claimReq.adminOnly">
-    Some Admin Operation
-  </button>
+  <a role="button" routerLink="/admin-only" class="btn btn-danger"  [appHideIfClaimsNotMet]="claimReq.adminOnly">
+    Add Time Table
+  </a>
 
-  <div [appHideIfClaimsNotMet]="claimReq.studentOnly">
+  <!-- <div [appHideIfClaimsNotMet]="claimReq.studentOnly">
     <div class="schedule">
       <h2>Today's Timetable</h2>
       <div class="lecture-card" *ngFor="let lecture of lectures" [style.border-color]="lecture.color">
@@ -15,5 +15,20 @@
         <p><strong>Duration:</strong> {{ lecture.duration }}</p>
       </div>
     </div>
+  </div> -->
+
+  <!-- <div [appHideIfClaimsNotMet]="claimReq.studentOnly">
+    <div class="schedule">
+      <h2>Today's Timetable 1 </h2>
+      <div class="lecture-card" *ngFor="let time of timeTable">
+        <h3>{{ time.value }}</h3>
+        <p><strong><time datetime="" class="label"></time></strong></p>
+      </div>
+    </div>
+  </div> -->
+  <div>
+    <a role="button" routerLink="/view-time-table" class="btn btn-danger"  [appHideIfClaimsNotMet]="claimReq.studentOnly">
+      View Time Table
+    </a>
   </div>
 </div>

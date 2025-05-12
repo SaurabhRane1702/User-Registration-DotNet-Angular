@@ -28,6 +28,10 @@ export class UserService {
     return this.http.get(this.baseUrl + '/userprofile');
   }
 
+  fetchTimeTable() {
+    return this.http.get(this.baseUrl + '/fetchtimetable');
+  }
+
   // get data() {
   //   return this.formData.asObservable();
   // }

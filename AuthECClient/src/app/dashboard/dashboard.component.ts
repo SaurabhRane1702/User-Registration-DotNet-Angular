@@ -1,20 +1,23 @@
 import { claimReq } from './../shared/utils/claimReq-utils';
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 import { AuthService } from '../shared/services/auth.service';
 import { UserService } from '../shared/services/user.service';
 import { HideIfClaimsNotMetDirective } from '../shared/directives/hide-if-claims-not-met.directive';
 import { CommonModule } from '@angular/common';
+import { ToastrService } from 'ngx-toastr';
+import { TimeTable } from '../models/timeTable.model';
 
 @Component({
   selector: 'app-dashboard',
-  imports: [HideIfClaimsNotMetDirective,CommonModule],
+  imports: [HideIfClaimsNotMetDirective,CommonModule,RouterLink],
   templateUrl: './dashboard.component.html',
   styles: ``,
 })
 export class DashboardComponent implements OnInit {
   fullName: string = '';
-
+  
+  
   currentDate = new Date();
   studentName = 'John Doe';
   libraryId = 'LIB12345';
@@ -24,7 +27,8 @@ export class DashboardComponent implements OnInit {
   constructor(
     private router: Router,
     private authService: AuthService,
-    private userService: UserService
+    private userService: UserService,
+    private toastr: ToastrService
   ) {}
 
   ngOnInit(): void {
@@ -37,6 +41,9 @@ export class DashboardComponent implements OnInit {
       },
     });
   }
+
+  
+
 
   lectures = [
     {

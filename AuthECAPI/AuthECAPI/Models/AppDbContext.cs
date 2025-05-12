@@ -13,5 +13,7 @@ namespace AuthECAPI.Models
         public DbSet<AppUser> AppUsers { get; set; }
 
         public DbSet<TimeTable> TimeTables { get; set; }
+
+        public DbSet<Book> Books { get; set; }
     }
 }
