@@ -16,6 +16,7 @@ import { claimReq } from './shared/utils/claimReq-utils';
 import { AdditionalRegistrationDetailsComponent } from './user/registration/additional-registration-details/additional-registration-details.component';
 import { AdminTimetableComponent } from './authorizeDemo/admin-only/admin-timetable/admin-timetable.component';
 import { ViewTimeTableComponent } from './authorizeDemo/student-only/view-time-table/view-time-table.component';
+import { ViewBooksComponent } from './authorizeDemo/student-only/view-books/view-books.component';
 
 export const routes: Routes = [
   { path: '', redirectTo: '/signin', pathMatch: 'full' },
@@ -47,6 +48,11 @@ export const routes: Routes = [
       {
         path: 'view-time-table',
         component: ViewTimeTableComponent,
+        data: { claimReq: claimReq.studentOnly },
+      },
+      {
+        path: 'view-books',
+        component: ViewBooksComponent,
         data: { claimReq: claimReq.studentOnly },
       },
       {

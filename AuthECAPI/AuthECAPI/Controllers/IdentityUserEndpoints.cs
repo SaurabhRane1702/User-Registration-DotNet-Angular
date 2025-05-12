@@ -61,7 +61,7 @@ namespace AuthECAPI.Controllers
             app.MapPost("/forgotpasswordwithemail", ForgotPassword);
             app.MapPost("/addtimetable", AddTimeTable);
             app.MapGet("/fetchtimetable", FetchTimeTable);
-
+            app.MapGet("/fetchbooks", FetchBooks);
             return app;
         }
 
@@ -208,14 +208,42 @@ namespace AuthECAPI.Controllers
                                           .ToListAsync();
 
             // Check if any records were found, otherwise early return.
-            if (timeTables == null || timeTables.Count == 0)
+            if (timeTables == null)
             {
                 return Results.BadRequest(new { message = "No time table found for this user." });
+            }
+            else if (timeTables.Count == 0)
+            {
+                return Results.NoContent();
             }
             else
             {
                 return Results.Ok(timeTables);
             }
+        }
+
+        [Authorize(Roles = "Student")]
+        private static async Task<IResult> FetchBooks([FromServices] AppDbContext context)
+        {
+            // Fetch all books with their borrowed status and borrower details  
+            var books = await context.Books
+                                     .Select(b => new
+                                     {
+                                         b.Id,
+                                         b.BookTitle,
+                                         b.Genre,
+                                         b.IsBorrowed,
+                                         BorrowedBy = b.IsBorrowed ? b.BorrowedByEmail : null // Include borrower email if borrowed  
+                                     })
+                                     .ToListAsync();
+
+            // Check if any books exist  
+            if (books == null || books.Count == 0)
+            {
+                return Results.NoContent(); // Return 204 No Content if no books are found  
+            }
+
+            return Results.Ok(books); // Return the list of books  
         }
 
 
