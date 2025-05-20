@@ -32,6 +32,10 @@ export class UserService {
     return this.http.get(this.baseUrl + '/fetchtimetable');
   }
 
+  fetchBooks() {
+    return this.http.get(this.baseUrl + '/fetchbooks');
+  }
+
   // get data() {
   //   return this.formData.asObservable();
   // }

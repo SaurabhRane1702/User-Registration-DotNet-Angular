@@ -15,5 +15,7 @@ namespace AuthECAPI.Models
         public DbSet<TimeTable> TimeTables { get; set; }
 
         public DbSet<Book> Books { get; set; }
+
+        public DbSet<LibraryCard> LibraryCards { get; set; }
     }
 }
