@@ -5,11 +5,10 @@ import { UserService } from '../../../shared/services/user.service';
 import { ToastrService } from 'ngx-toastr';
 import { Book } from '../../../models/book.model';
 import { CommonModule } from '@angular/common';
-import { HideIfClaimsNotMetDirective } from '../../../shared/directives/hide-if-claims-not-met.directive';
 
 @Component({
   selector: 'app-view-books',
-  imports: [CommonModule,RouterLink,HideIfClaimsNotMetDirective],
+  imports: [CommonModule,RouterLink],
   templateUrl: './view-books.component.html',
   styles: ``
 })

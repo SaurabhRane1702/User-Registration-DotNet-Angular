@@ -17,6 +17,7 @@ import { AdditionalRegistrationDetailsComponent } from './user/registration/addi
 import { AdminTimetableComponent } from './authorizeDemo/admin-only/admin-timetable/admin-timetable.component';
 import { ViewTimeTableComponent } from './authorizeDemo/student-only/view-time-table/view-time-table.component';
 import { ViewBooksComponent } from './authorizeDemo/student-only/view-books/view-books.component';
+import { AddBookComponent } from './authorizeDemo/admin-only/add-book/add-book.component';
 
 export const routes: Routes = [
   { path: '', redirectTo: '/signin', pathMatch: 'full' },
@@ -87,6 +88,11 @@ export const routes: Routes = [
         data: {
           claimReq: claimReq.femaleAndBelow10,
         },
+      },
+      {
+        path: 'add-book',
+        component: AddBookComponent,
+        data: { claimReq: claimReq.adminOnly },
       },
       {
         path: 'forbidden',
