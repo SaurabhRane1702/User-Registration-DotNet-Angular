@@ -40,3 +40,16 @@ testem.log
 # System files
 .DS_Store
 Thumbs.db
+
+# Compiled TypeScript files (if any are outside dist)
+*.js
+*.js.map
+
+#Ignore DLL Files
+*.dll
+
+#Ignore Database Files
+*.db
+
+#Ignore exe Files
+*.exe

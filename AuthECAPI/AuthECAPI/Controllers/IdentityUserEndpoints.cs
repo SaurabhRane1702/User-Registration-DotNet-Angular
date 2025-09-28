@@ -119,7 +119,7 @@ namespace AuthECAPI.Controllers
                 var tokenDescriptor = new SecurityTokenDescriptor
                 {
                     Subject = claimsIdentity,
-                    Expires = DateTime.Now.AddMinutes(10),
+                    Expires = DateTime.Now.AddMinutes(60),
                     SigningCredentials = new SigningCredentials(signInKey, SecurityAlgorithms.HmacSha256Signature)
                 };
 
