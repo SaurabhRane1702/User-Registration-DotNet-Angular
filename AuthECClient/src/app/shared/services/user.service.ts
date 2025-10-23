@@ -64,4 +64,18 @@ export class UserService {
 
     return this.http.post(this.baseUrl + '/addtimetable', formData, httpOptions);
   }
+
+  fetchUsersEmailId(){
+    console.log("In fetchUsersEmailId of UserService");
+    return this.http.get(this.baseUrl + '/fetchallemail');
+  }
+
+  addBook(bookData : any){
+    console.log('Book Data before calling service',bookData);
+    const httpOptions = {
+      headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+    };
+    return this.http.post(this.baseUrl + '/addbooks', bookData, httpOptions);
+  }
+  
 }
