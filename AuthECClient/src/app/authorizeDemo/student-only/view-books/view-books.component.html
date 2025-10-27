@@ -24,7 +24,13 @@
         <td>{{ item.borrowedByEmail || 'NA' }}</td>
         <!-- TODO If Student Does not have libraryId show 'Apply For Library Card to Borrow' -->
         <td>
-          <a role="button" routerLink="/view-time-table" class="btn btn-secondary">
+          <a role="button"
+             (click)="!item.borrowedByEmail ? borrowBook(item.id) : null"
+             title="Borrow Book if not already borrowed"
+             class="btn btn-secondary"
+             [class.disabled]="item.borrowedByEmail"
+             [attr.aria-disabled]="item.borrowedByEmail"
+             [tabindex]="item.borrowedByEmail ? -1 : 0">
             Borrow Book
           </a>
         </td>

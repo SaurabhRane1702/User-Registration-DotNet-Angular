@@ -36,4 +36,16 @@ book: Book[] = [];
     })
     
   }
+
+  borrowBook(bookId: number){
+    console.log("Borrow Book clicked for bookId:", bookId);
+    this.userService.borrowBook(bookId).subscribe({
+      next: (res: any) => {
+        console.log("Book borrowed successfully", res);
+        this.toastr.success('Book Borrowed Successfully', 'Success');
+        //Refresh the book list
+        this.ngOnInit();
+      }
+    });
+  }
 }

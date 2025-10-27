@@ -74,6 +74,7 @@ namespace AuthECAPI.Controllers
             app.MapGet("/fetchbooks", FetchBooks);
             app.MapGet("/fetchallusers", FetchAllUsers);
             app.MapGet("/fetchallemail", FetchUserEmail);
+            app.MapPost("/borrowbook", BorrowBook);
             return app;
         }
 
@@ -290,6 +291,58 @@ namespace AuthECAPI.Controllers
             return Results.Ok(emails); // Return the list of emails
         }
 
+        [Authorize(Roles ="Student,Teacher")]
+        private static async Task<IResult> BorrowBook([FromQuery] int bookId, ClaimsPrincipal user, [FromServices] AppDbContext context, UserManager<AppUser> userManager)
+        {
+            var userIdClaim = user.Claims.FirstOrDefault(c => c.Type == "userID")?.Value;
+            if (string.IsNullOrEmpty(userIdClaim))
+            {
+                return Results.BadRequest(new { message = "Invalid user claims." });
+            }
+
+            var appUser = await userManager.FindByIdAsync(userIdClaim);
+            if (appUser == null)
+            {
+                return Results.BadRequest(new { message = "User not found." });
+            }
+
+            var book = await context.Books.FindAsync(bookId);
+            if (book == null)
+            {
+                return Results.NotFound(new { message = "Book not found." });
+            }
+
+            // 3. Check borrow state
+            if (book.IsBorrowed)
+            {
+                return Results.BadRequest(new { message = "Book is already borrowed." });
+            }
+
+            // 4. Update book record to mark as borrowed by this user
+            book.IsBorrowed = true;
+            book.BorrowedByEmail = appUser.Email;
+
+            try
+            {
+                context.Books.Update(book);
+                await context.SaveChangesAsync();
+            }
+            catch (DbUpdateConcurrencyException)
+            {
+                return Results.Conflict(new { message = "Concurrency conflict occurred while borrowing the book. Please try again." });
+            }
+
+            return Results.Ok(new
+            {
+                message = "Book borrowed successfully.",
+                book.Id,
+                book.BookTitle,
+                book.Genre,
+                book.IsBorrowed,
+                book.BorrowedByEmail
+            });
+
+        }
 
 
     }

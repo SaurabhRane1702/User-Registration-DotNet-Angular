@@ -1,4 +1,4 @@
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { environment } from '../../../environments/environment';
 import { AuthService } from './auth.service';
@@ -76,6 +76,19 @@ export class UserService {
       headers: new HttpHeaders({ 'Content-Type': 'application/json' })
     };
     return this.http.post(this.baseUrl + '/addbooks', bookData, httpOptions);
+  }
+
+  borrowBook(bookId: number){
+    console.log("In borrowBook of UserService for bookId:", bookId);
+    const httpOptions = {
+      headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+    };
+    // return this.http.post(this.baseUrl + '/borrowbook',null, 
+    //   {
+    //     ...httpOptions, 
+    //     params: new HttpParams().set('bookId', bookId.toString())
+    //   });
+    return this.http.post(this.baseUrl + '/borrowbook?bookId='+bookId, null, httpOptions);
   }
   
 }
