@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;
+using Microsoft.IdentityModel.Logging;
 using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;
 using System.Reflection.Metadata.Ecma335;
@@ -47,8 +48,16 @@ namespace AuthECAPI.Controllers
         public string WeekDayActivity { get; set; }
         public string TeacherSelection { get; set; }
     }
+
+    public class BookModel {
+        public string BookTitle { get; set; }
+        public string Genre { get; set; }
+        public bool IsBorrowed { get; set; }
+        public string? BorrowedByEmail { get; set; }
+    }
     public static class IdentityUserEndpoints
     {
+
         public static IEndpointRouteBuilder MapIdentityUserEndpoints(this IEndpointRouteBuilder app)
         {
             //Since we MapGroup we do not need /Api
@@ -60,8 +69,11 @@ namespace AuthECAPI.Controllers
 
             app.MapPost("/forgotpasswordwithemail", ForgotPassword);
             app.MapPost("/addtimetable", AddTimeTable);
+            app.MapPost("/addbooks", AddBooks);
             app.MapGet("/fetchtimetable", FetchTimeTable);
             app.MapGet("/fetchbooks", FetchBooks);
+            app.MapGet("/fetchallusers", FetchAllUsers);
+            app.MapGet("/fetchallemail", FetchUserEmail);
             return app;
         }
 
@@ -222,7 +234,7 @@ namespace AuthECAPI.Controllers
             }
         }
 
-        [Authorize(Roles = "Student")]
+        [Authorize(Roles = "Admin,Student")]
         private static async Task<IResult> FetchBooks([FromServices] AppDbContext context)
         {
             // Fetch all books with their borrowed status and borrower details  
@@ -233,7 +245,7 @@ namespace AuthECAPI.Controllers
                                          b.BookTitle,
                                          b.Genre,
                                          b.IsBorrowed,
-                                         BorrowedBy = b.IsBorrowed ? b.BorrowedByEmail : null // Include borrower email if borrowed  
+                                         BorrowedByEmail = b.IsBorrowed ? b.BorrowedByEmail : null // Include borrower email if borrowed  
                                      })
                                      .ToListAsync();
 
@@ -244,6 +256,38 @@ namespace AuthECAPI.Controllers
             }
 
             return Results.Ok(books); // Return the list of books  
+        }
+
+        [Authorize(Roles ="Admin")]
+        private static async Task<IResult> AddBooks([FromServices] AppDbContext context, [FromBody] BookModel bookModel)
+        {
+            var b = new Book
+            {
+                BookTitle = bookModel.BookTitle,
+                Genre = bookModel.Genre,
+                IsBorrowed = bookModel.IsBorrowed,
+                BorrowedByEmail = bookModel.IsBorrowed ? bookModel.BorrowedByEmail : null
+            };
+            context.Books.Add(b);
+            await context.SaveChangesAsync();
+
+            return Results.Ok(b);
+
+
+        }
+
+        [Authorize(Roles = "Admin")]
+        private static async Task<IResult> FetchAllUsers([FromServices] AppDbContext context, UserManager<AppUser> userManager)
+        {
+            return Results.Ok(await userManager.Users.ToListAsync());
+        }
+
+        [Authorize(Roles = "Admin")]
+        private static async Task<IResult> FetchUserEmail(UserManager<AppUser> userManager)
+        {
+            var appUsers = await userManager.Users.ToListAsync(); // Fetch all users as a list
+            var emails = appUsers.Select(user => user.Email).ToList(); // Extract emails into a list
+            return Results.Ok(emails); // Return the list of emails
         }
 
 
