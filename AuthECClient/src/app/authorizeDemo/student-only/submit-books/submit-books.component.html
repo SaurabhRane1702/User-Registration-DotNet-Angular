@@ -1,0 +1,56 @@
+<div>
+    <h2>Submit Books to Library</h2>
+    <div class="mb-3" style="text-align: end;">
+    <a role="button" routerLink="/dashboard" class="btn btn-secondary" >
+        Go Back
+      </a>
+    </div>
+  
+    <table *ngIf="borrowedBooks.length > 0" class="table">
+      <thead class="thead-dark">
+        <tr>
+          <th>Book Title</th>
+          <th>Genre</th>
+          <th>Is Borrowed</th>
+          <th>Borrowed By</th>
+          <th>Submit Book</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let book of borrowedBooks">
+          <td>{{ book.bookTitle }}</td>
+          <td>{{ book.genre }}</td>
+          <td>{{ book.isBorrowed ? 'Yes' : 'No' }}</td>
+          <td>{{ book.borrowedByEmail || 'NA' }}</td>
+          <td>
+            <a role="button"
+               (click)="submitBook(book.id)"
+               title="Submit Book"
+               class="btn btn-secondary"
+               [class.disabled]="!book.isBorrowed"
+               [attr.aria-disabled]="!book.isBorrowed"
+               [tabindex]="book.isBorrowed ? 0 : -1">
+              Submit
+            </a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  
+    <table *ngIf="!borrowedBooks || borrowedBooks.length == 0" class="table">
+      <thead class="thead-dark">
+        <tr>
+          <th>Book Title</th>
+          <th>Genre</th>
+          <th>Is Borrowed</th>
+          <th>Borrowed By</th>
+          <th>Submit Book</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td colspan="6" class="text-center">No Books to Display right now.</td>
+        </tr>
+      </tbody>
+    </table>
+</div>

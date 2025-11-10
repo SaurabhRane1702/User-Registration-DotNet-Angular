@@ -11,6 +11,7 @@
       <tr>
         <th>Book Number</th>
         <th>Book Title</th>
+        <th>Genre</th>
         <th>Is Borrowed</th>
         <th>Borrowed By</th>
         <th>Borrow Book</th>
@@ -20,6 +21,7 @@
       <tr *ngFor="let item of book">
         <td>{{ item.id }}</td>
         <td>{{ item.bookTitle }}</td>
+        <td>{{ item.genre }}</td>
         <td>{{ item.isBorrowed || 'Not Borrowed'}}</td>
         <td>{{ item.borrowedByEmail || 'NA' }}</td>
         <!-- TODO If Student Does not have libraryId show 'Apply For Library Card to Borrow' -->

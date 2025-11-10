@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { environment } from '../../../environments/environment';
 import { AuthService } from './auth.service';
 import { BehaviorSubject } from 'rxjs';
+import { Book } from '../../models/book.model';
 
 @Injectable({
   providedIn: 'root',
@@ -65,6 +66,11 @@ export class UserService {
     return this.http.post(this.baseUrl + '/addtimetable', formData, httpOptions);
   }
 
+  fetchUsers(){
+    console.log("In fetchUsers of UserService");
+    return this.http.get(this.baseUrl + '/fetchallusers');
+  }
+
   fetchUsersEmailId(){
     console.log("In fetchUsersEmailId of UserService");
     return this.http.get(this.baseUrl + '/fetchallemail');
@@ -91,4 +97,16 @@ export class UserService {
     return this.http.post(this.baseUrl + '/borrowbook?bookId='+bookId, null, httpOptions);
   }
   
+  fetchBorrowedBooks() {
+    console.log("In fetchBorrowedBooks of UserService");
+    return this.http.get(this.baseUrl + '/fetchborrowedbooks');
+  }
+
+  submitBorrowedBook(bookId: number){
+    console.log("In submitBorrowedBook of UserService for bookId:", bookId);
+    const httpOptions = {
+      headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+    };
+    return this.http.post(this.baseUrl + '/submitbooks?bookId='+bookId, null, httpOptions);
+  }
 }

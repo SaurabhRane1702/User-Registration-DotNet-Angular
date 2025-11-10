@@ -18,6 +18,8 @@ import { AdminTimetableComponent } from './authorizeDemo/admin-only/admin-timeta
 import { ViewTimeTableComponent } from './authorizeDemo/student-only/view-time-table/view-time-table.component';
 import { ViewBooksComponent } from './authorizeDemo/student-only/view-books/view-books.component';
 import { AddBookComponent } from './authorizeDemo/admin-only/add-book/add-book.component';
+import { SubmitBooksComponent } from './authorizeDemo/student-only/submit-books/submit-books.component';
+import { ViewUsersComponent } from './authorizeDemo/admin-only/view-users/view-users.component';
 
 export const routes: Routes = [
   { path: '', redirectTo: '/signin', pathMatch: 'full' },
@@ -57,8 +59,18 @@ export const routes: Routes = [
         data: { claimReq: claimReq.studentOnly },
       },
       {
+        path: 'submit-books',
+        component: SubmitBooksComponent,
+        data: { claimReq: claimReq.studentOnly },
+      },
+      {
         path: 'admin-timeTable',
         component: AdminTimetableComponent,
+        data: { claimReq: claimReq.adminOnly },
+      },
+      {
+        path: 'view-users',
+        component: ViewUsersComponent,
         data: { claimReq: claimReq.adminOnly },
       },
       {

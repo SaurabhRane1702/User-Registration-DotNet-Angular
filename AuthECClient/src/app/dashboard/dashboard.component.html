@@ -7,6 +7,9 @@
   <a role="button" routerLink="/add-book" class="btn btn-danger"  [appHideIfClaimsNotMet]="claimReq.adminOnly">
     Add Books
   </a>
+  <a role="button" routerLink="/view-users" class="btn btn-danger"  [appHideIfClaimsNotMet]="claimReq.adminOnly">
+    View All Users
+  </a>
 
   <!-- <div [appHideIfClaimsNotMet]="claimReq.studentOnly">
     <div class="schedule">
@@ -32,6 +35,11 @@
   <div>
     <a role="button" routerLink="/view-time-table" class="btn btn-danger"  [appHideIfClaimsNotMet]="claimReq.studentOnly">
       View Time Table
+    </a>
+  </div>
+  <div>
+    <a role="button" routerLink="/submit-books" class="btn btn-danger"  [appHideIfClaimsNotMet]="claimReq.studentOnly">
+      Submit Books
     </a>
   </div>
 </div>
