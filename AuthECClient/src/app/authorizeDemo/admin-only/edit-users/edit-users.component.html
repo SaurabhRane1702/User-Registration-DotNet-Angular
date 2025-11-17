@@ -1,0 +1,19 @@
+<p>edit-users works!</p>
+
+<!-- <div class="mb-3" style="text-align: end;">
+    <a role="button" routerLink="/dashboard" class="btn btn-secondary">
+        Go Back
+    </a>
+</div> -->
+
+<div *ngIf="email">
+    <h3>Edit User Details for: {{ email }}</h3>
+    <!-- Form fields for editing user details go here -->
+    <form>
+        <div class="mb-3">
+            <label for="fullName" class="form-label">Full Name</label>
+        </div>
+    </form>
+</div>
+
+

@@ -4,7 +4,7 @@
     </a>
 </div>
 
-<table *ngIf="users!.length > 0" class="table">
+<table *ngIf="users!.length > 0 && !emailToEdit" class="table">
     <thead class="thead-dark">
         <tr>
             <th>Full Name</th>
@@ -25,7 +25,8 @@
             <td>
                 <a role="button"
                    title="Edit User Details"
-                   class="btn btn-secondary">
+                   class="btn btn-secondary"
+                   (click)="editUser(item.email)">
                     Edit User
                 </a>
             </td>
@@ -33,7 +34,7 @@
     </tbody>
 </table>
 
-<table *ngIf="!users || users.length == 0" class="table">
+<table *ngIf="(!users || users.length == 0) && !emailToEdit" class="table">
     <thead class="thead-dark">
         <tr>
             <th>User Number</th>
@@ -51,3 +52,5 @@
         </tr>
     </tbody>
 </table>
+
+<app-edit-users *ngIf="emailToEdit" [email]="emailToEdit"></app-edit-users>
