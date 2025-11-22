@@ -76,6 +76,14 @@ export class UserService {
     return this.http.get(this.baseUrl + '/fetchallemail');
   }
 
+  fetchUserDetailsOnEmail(email:string){
+    console.log("In fetchUserDetails of UserService for email:", email);
+    const httpOptions = {
+      headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+    };
+    return this.http.get(this.baseUrl + '/fetchuseronemail' + '?email=' + email, httpOptions);
+  }
+
   addBook(bookData : any){
     console.log('Book Data before calling service',bookData);
     const httpOptions = {

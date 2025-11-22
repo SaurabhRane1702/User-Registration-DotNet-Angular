@@ -6,14 +6,61 @@
     </a>
 </div> -->
 
-<div *ngIf="email">
-    <h3>Edit User Details for: {{ email }}</h3>
-    <!-- Form fields for editing user details go here -->
-    <form>
-        <div class="mb-3">
-            <label for="fullName" class="form-label">Full Name</label>
-        </div>
-    </form>
+<div *ngIf="userDetails; else loading">
+  <h3>Edit User Details for: {{ userDetails.email }}</h3>
+
+  <form (ngSubmit)="onSubmit(userForm)" #userForm="ngForm" novalidate>
+    <div class="row g-3">
+      <div class="col-md-6">
+        <label for="fullName" class="form-label">Full Name</label>
+        <input id="fullName" name="fullName" class="form-control" required
+               [(ngModel)]="userDetails.fullName" #fullName="ngModel" />
+      </div>
+
+      <div class="col-md-6">
+        <label for="email" class="form-label">Email</label>
+        <input id="email" name="email" class="form-control" required email
+               [(ngModel)]="userDetails.email" #email="ngModel" />
+      </div>
+
+      <div class="col-md-4">
+        <label for="gender" class="form-label">Gender</label>
+        <select id="gender" name="gender" class="form-select" required
+                [(ngModel)]="userDetails.gender" #gender="ngModel">
+          <option value="">Select gender</option>
+          <option value="Male">Male</option>
+          <option value="Female">Female</option>
+          <option value="Other">Other</option>
+        </select>
+      </div>
+
+      <div class="col-md-4">
+        <label for="libraryId" class="form-label">Library ID</label>
+        <input id="libraryId" name="libraryID" type="number" class="form-control"
+               [(ngModel)]="userDetails.libraryId" />
+      </div>
+
+      <div class="col-md-4">
+        <label for="role" class="form-label">Role</label>
+        <select id="role" name="role" class="form-select" required
+                [(ngModel)]="userDetails.role" #role="ngModel">
+          <option value="">Select role</option>
+          <option value="Admin">Admin</option>
+          <option value="Teacher">Teacher</option>
+          <option value="Student">Student</option>
+        </select>
+      </div>
+
+      <div class="col-12 text-end">
+        <a routerLink="/dashboard" class="btn btn-secondary me-2">Cancel</a>
+        <button type="submit" class="btn btn-primary" [disabled]="userForm.invalid">Save Changes</button>
+      </div>
+    </div>
+  </form>
 </div>
+
+<ng-template #loading>
+  <p>Loading user details...</p>
+</ng-template>
 
 
