@@ -117,4 +117,12 @@ export class UserService {
     };
     return this.http.post(this.baseUrl + '/submitbooks?bookId='+bookId, null, httpOptions);
   }
+
+  updateUserDetails(userData : any){
+    console.log('User Data before calling updateUserDetails service',userData);
+    const httpOptions = {
+      headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+    };
+    return this.http.patch(this.baseUrl + '/updateuserdetails', userData, httpOptions);
+  }
 }
