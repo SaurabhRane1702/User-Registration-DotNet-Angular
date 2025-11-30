@@ -1,0 +1,55 @@
+<p>view-books works!</p>
+
+
+<div class="mb-3" style="text-align: end;">
+    <a role="button" routerLink="/dashboard" class="btn btn-secondary" >
+        Go Back
+      </a>
+</div>
+<table *ngIf="book.length > 0" class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th>Book Number</th>
+        <th>Book Title</th>
+        <th>Genre</th>
+        <th>Is Borrowed</th>
+        <th>Borrowed By</th>
+        <th>Borrow Book</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of book">
+        <td>{{ item.id }}</td>
+        <td>{{ item.bookTitle }}</td>
+        <td>{{ item.genre }}</td>
+        <td>{{ item.isBorrowed || 'Not Borrowed'}}</td>
+        <td>{{ item.borrowedByEmail || 'NA' }}</td>
+        <!-- TODO If Student Does not have libraryId show 'Apply For Library Card to Borrow' -->
+        <td>
+          <a role="button"
+             (click)="!item.borrowedByEmail ? borrowBook(item.id) : null"
+             title="Borrow Book if not already borrowed"
+             class="btn btn-secondary"
+             [class.disabled]="item.borrowedByEmail"
+             [attr.aria-disabled]="item.borrowedByEmail"
+             [tabindex]="item.borrowedByEmail ? -1 : 0">
+            Borrow Book
+          </a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+<table *ngIf="book.length == 0" class="table">
+   <thead class="thead-dark">
+      <tr>
+        <th>Book Number</th>
+        <th>Book Title</th>
+        <th>Is Borrowed</th>
+        <th>Borrowed By</th>
+        <th>Borrow Book</th>
+      </tr>
+    </thead>
+  <tr>
+    <td colspan="4" class="text-center">No Books to Display right now.</td>
+  </tr>
+</table>

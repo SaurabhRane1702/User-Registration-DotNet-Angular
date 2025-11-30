@@ -13,6 +13,13 @@ import { Under10AndFemaleComponent } from './authorizeDemo/under10-and-female/un
 import { MainLayoutComponent } from './layouts/main-layout/main-layout.component';
 import { ForbiddenComponent } from './forbidden/forbidden.component';
 import { claimReq } from './shared/utils/claimReq-utils';
+import { AdditionalRegistrationDetailsComponent } from './user/registration/additional-registration-details/additional-registration-details.component';
+import { AdminTimetableComponent } from './authorizeDemo/admin-only/admin-timetable/admin-timetable.component';
+import { ViewTimeTableComponent } from './authorizeDemo/student-only/view-time-table/view-time-table.component';
+import { ViewBooksComponent } from './authorizeDemo/student-only/view-books/view-books.component';
+import { AddBookComponent } from './authorizeDemo/admin-only/add-book/add-book.component';
+import { SubmitBooksComponent } from './authorizeDemo/student-only/submit-books/submit-books.component';
+import { ViewUsersComponent } from './authorizeDemo/admin-only/view-users/view-users.component';
 
 export const routes: Routes = [
   { path: '', redirectTo: '/signin', pathMatch: 'full' },
@@ -23,6 +30,7 @@ export const routes: Routes = [
       { path: 'signup', component: RegistrationComponent },
       { path: 'signin', component: LoginComponent },
       { path: 'forgotpassword', component: ForgotPasswordComponent },
+      {path: 'additionalRegDetails', component: AdditionalRegistrationDetailsComponent},
     ],
   },
   {
@@ -38,6 +46,31 @@ export const routes: Routes = [
       {
         path: 'admin-only',
         component: AdminOnlyComponent,
+        data: { claimReq: claimReq.adminOnly },
+      },
+      {
+        path: 'view-time-table',
+        component: ViewTimeTableComponent,
+        data: { claimReq: claimReq.studentOnly },
+      },
+      {
+        path: 'view-books',
+        component: ViewBooksComponent,
+        data: { claimReq: claimReq.studentOnly },
+      },
+      {
+        path: 'submit-books',
+        component: SubmitBooksComponent,
+        data: { claimReq: claimReq.studentOnly },
+      },
+      {
+        path: 'admin-timeTable',
+        component: AdminTimetableComponent,
+        data: { claimReq: claimReq.adminOnly },
+      },
+      {
+        path: 'view-users',
+        component: ViewUsersComponent,
         data: { claimReq: claimReq.adminOnly },
       },
       {
@@ -67,6 +100,11 @@ export const routes: Routes = [
         data: {
           claimReq: claimReq.femaleAndBelow10,
         },
+      },
+      {
+        path: 'add-book',
+        component: AddBookComponent,
+        data: { claimReq: claimReq.adminOnly },
       },
       {
         path: 'forbidden',

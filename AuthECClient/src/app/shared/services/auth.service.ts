@@ -11,14 +11,15 @@ export class AuthService {
   baseUrl = environment.apiBaseUrl;
 
   createUser(formData: any) {
-    //---WARNING! TODO
+    //---WARNING! TODO --DONE
     //default value for Role, Gender, Age, LibraryID?
     //instead of regsitration Form, there shoulw some other form that needs to implementated
     //to update these details of the User
     //--TODO End
-    formData.role = 'Teacher';
-    formData.gender = 'Female';
-    formData.age = 35;
+    console.log('formData before over right', formData);
+    //formData.role = 'Teacher';
+    //formData.gender = 'Female';
+    //formData.age = 35;
     return this.http.post(this.baseUrl + '/signup', formData);
   }
 

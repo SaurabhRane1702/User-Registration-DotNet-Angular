@@ -1,0 +1,39 @@
+<div class="mb-3" style="text-align: end;">
+    <a role="button" routerLink="/dashboard" class="btn btn-secondary" >
+        Go Back
+      </a>
+</div>
+<table *ngIf="timeTable.length > 0" class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th>Subject</th>
+        <th>Class</th>
+        <th>Day</th>
+        <th>Time</th>
+        <th>Teacher</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of timeTable">
+        <td>{{ item.subject }}</td>
+        <td>{{ item.class }}</td>
+        <td>{{ item.day }}</td>
+        <td>{{ item.time }}</td>
+        <td>{{ item.teacher }}</td>
+      </tr>
+    </tbody>
+  </table>
+<table *ngIf="timeTable.length == 0" class="table">
+   <thead class="thead-dark">
+      <tr>
+        <th>Subject</th>
+        <th>Class</th>
+        <th>Day</th>
+        <th>Time</th>
+        <th>Teacher</th>
+      </tr>
+    </thead>
+  <tr>
+    <td colspan="5" class="text-center">Time Table Not Available.</td>
+  </tr>
+</table>

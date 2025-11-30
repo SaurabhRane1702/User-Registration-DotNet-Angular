@@ -1,0 +1,174 @@
+<div class="mb-4">
+    <h2 class="text-success">Sign Up</h2>
+    <div>
+      Already have an accont?
+      <a
+        routerLink="/signin"
+        class="text-decoration-none fw-medium text-success d-inline-block"
+        >Sign In</a
+      >
+    </div>
+  </div>
+  <form [formGroup]="formAdditional" (ngSubmit)="onSubmit()">
+    <div class="mb-3">
+      <input
+        type="text"
+        class="form-control bg-body-secondary"
+        placeholder="Age"
+        formControlName="age"
+      />
+      <div
+        class="error-feedback"
+        *ngIf="
+          hasDisplayableError('age') &&
+          formAdditional.controls.age.hasError('required')
+        "
+      >
+        Please enter your age
+      </div>
+    </div>
+    <!-- <div class="mb-3">
+      <input
+        type="text"
+        class="form-control bg-body-secondary"
+        placeholder="Gender"
+        formControlName="gender"
+      />
+      <div class="error-feedback" *ngIf="hasDisplayableError('gender')">
+        <div *ngIf="formAdditional.controls.gender.hasError('required')">
+          Please Enter your gender
+        </div>
+        </div>
+    </div> -->
+    <!-- <div class="mb-3 border border-info p-3">
+        <span>Select Gender</span>
+    
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="gender" id="flexRadioDefault" formControlName="gender">
+            <label class="form-check-label" for="flexRadioDefault">
+            Male
+            </label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="gender" id="flexRadioDefault" formControlName="gender">
+            <label class="form-check-label" for="flexRadioDefault">
+            Female
+            </label>
+        </div>
+    </div> -->
+    <!-- <mat-radio-group formControlName="type">
+        <mat-radio-button value="trainer">Trainer</mat-radio-button>
+        <mat-radio-button value="client">Client</mat-radio-button>
+    </mat-radio-group> -->
+
+    <div class="form-group">
+        <label class="form-label">Please Select gender</label>
+        <div class="radio-group btn-group" aria-label="Basic radio toggle button group to select gender">
+          <div class="radio-item" *ngFor="let method of genders">
+            <input 
+              type="radio" 
+              [id]="'gender-' + method.value" 
+              [value]="method.value" 
+              formControlName="gender"
+              class="radio-input btn-check"
+            >
+            <label [for]="'gender-' + method.value" class="radio-label btn btn-outline-primary">
+              {{ method.label }}
+            </label>
+          </div>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="form-label">Please Select role</label>
+        <div class="radio-group btn-group" aria-label="Basic radio toggle button group to select role">
+          <div class="radio-item" *ngFor="let method of roles">
+            <input 
+              type="radio" 
+              [id]="'role-' + method.value" 
+              [value]="method.value" 
+              formControlName="role"
+              class="radio-input btn-check"
+            >
+            <label [for]="'role-' + method.value" class="radio-label btn btn-outline-primary">
+              {{ method.label }}
+            </label>
+          </div>
+        </div>
+    </div>
+    <div class="form-group">
+      <div class="mt-3 mb-3">
+        <input
+          type="text"
+          class="form-control bg-body-secondary"
+          placeholder="Library Id"
+          formControlName="librabyId"
+        />
+      </div>
+    </div>
+
+    <!-- <div class="row">
+        <span class="mb-3">Select Gender</span>
+        <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
+            <input type="radio" class="btn-check" formControlName="gender" id="btnradio1" autocomplete="off" checked>
+            <label class="btn btn-outline-primary" for="btnradio1">Male</label>
+          
+            <input type="radio" class="btn-check" formControlName="gender" id="btnradio2" autocomplete="off">
+            <label class="btn btn-outline-primary" for="btnradio2">Female</label>
+          
+        </div>
+    </div> -->
+
+      <!-- <div class="error-feedback" *ngIf="hasDisplayableError('gender')">
+        <div *ngIf="formAdditional.controls.gender.hasError('required')">
+          Please Enter your gender
+        </div>
+        <!-- <div *ngIf="formAdditional.controls.gender.hasError('gender')">
+          Please Enter a valid Email address.
+        </div> -->
+    
+    <!-- <div class="mb-3">
+      <input
+        type="password"
+        class="form-control bg-body-secondary"
+        placeholder="Password"
+        formControlName="password"
+      />
+      <div class="error-feedback" *ngIf="hasDisplayableError('password')">
+        <ng-container [ngSwitch]="form.controls.password.errors | firstKey">
+          <div *ngSwitchCase="'required'">Please Enter your password</div>
+          <div *ngSwitchCase="'minlength'">Alteast 6 characters are required</div>
+          <div *ngSwitchCase="'pattern'">
+            Alteast one special character is required.
+          </div>
+        </ng-container>
+      </div>
+    </div>
+    <div class="mb-3">
+      <input
+        type="text"
+        class="form-control bg-body-secondary"
+        placeholder="ConfirmPassword"
+        formControlName="confirmPassword"
+      />
+      <div
+        class="error-feedback"
+        *ngIf="
+          hasDisplayableError('confirmPassword') &&
+          form.controls.confirmPassword.hasError('passwordMismatch')
+        "
+      >
+        Password and confirm password Does not match
+      </div>
+    </div> -->
+    <div class="row mt-4">
+        <!-- TODO --Implement Previous button -->
+    <!-- <button class="col-3" type="" onclick="previous()" class="btn btn-success w-100 rounded-3">
+        Previous
+    </button> -->
+      <button class="col-3" type="submit" class="btn btn-success w-100 rounded-3">
+        Register
+      </button>
+    </div>
+  </form>
+  

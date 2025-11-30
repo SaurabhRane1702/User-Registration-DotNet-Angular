@@ -1,0 +1,62 @@
+<div class="row">
+    <div class="col-md-8 offset-md-2">
+        <h2 class="text-center">Add New Book</h2>
+        <form (ngSubmit)="onSubmit(bookForm)" #bookForm="ngForm">
+            <div class="row">
+            <div class="col-md-6">
+                <div class="mb-3">
+                <label for="title" class="form-label">BookTitle</label>
+                <input type="text" id="title" class="form-control" required [(ngModel)]="book.bookTitle" name="bookTitle" #bookTitle="ngModel">
+                <div *ngIf="bookTitle.invalid && bookTitle.touched" class="text-danger">Title is required.</div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="mb-3">
+                <label for="genre" class="form-label">Genre</label>
+                <input type="text" id="author" class="form-control" required [(ngModel)]="book.genre" name="genre" #genre="ngModel">
+                <div *ngIf="genre.invalid && genre.touched" class="text-danger">Genre is required.</div>
+                </div>
+            </div>
+            </div>
+            <div class="row">
+            <div class="col-md-6">
+                <div class="mb-3">
+                <label for="borrowedByEmail" class="form-label">Select Borrower Email</label>
+                <select id="borrowedByEmail" class="form-select" [(ngModel)]="book.borrowedByEmail" name="borrowedByEmail" #borrowedByEmail="ngModel">
+                    <option value="">Select an email</option>
+                    <option *ngFor="let email of this.emails" [value]="email">{{ email }}</option>
+                </select>
+                <div *ngIf="borrowedByEmail.invalid && borrowedByEmail.touched" class="text-danger">Please select an email.</div>
+                </div>
+            </div>
+            </div>
+            <div class="row">
+            <div class="col-md-12 text-center">
+                <button type="submit" class="btn btn-primary" [disabled]="bookForm.invalid">Add Book</button>
+            </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+<div class="row">
+    <h1>Book Details</h1>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Book Title</th>
+                <th>Genre</th>
+                <th>Is Borrowed</th>
+                <th>Borrowed By Email</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let book of this.books">
+                <td>{{ book.bookTitle }}</td>
+                <td>{{ book.genre }}</td>
+                <td>{{ book.isBorrowed }}</td>
+                <td>{{ book.borrowedByEmail }}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

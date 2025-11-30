@@ -9,7 +9,7 @@
     >
   </div>
 </div>
-<form [formGroup]="form" (ngSubmit)="onSubmit()">
+<form [formGroup]="form" (ngSubmit)="nextStep()">
   <div class="mb-3">
     <input
       type="text"
@@ -79,7 +79,7 @@
   </div>
   <div class="mt-4">
     <button type="submit" class="btn btn-success w-100 rounded-3">
-      Register
+      Next
     </button>
   </div>
 </form>
