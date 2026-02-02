@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
+using System.ComponentModel.DataAnnotations;
 using System.Data;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
@@ -16,6 +17,7 @@ namespace AuthECAPI.Controllers
     {
         public string Email { get; set; }
         public string Password { get; set; }
+        [MinLength(2)]
         public string FullName { get; set; }
         public string Role { get; set; }
         public string Gender { get; set; }
@@ -38,6 +40,7 @@ namespace AuthECAPI.Controllers
 
     public class TimeTableModel
     {
+        [Required]
         public string SubjectName { get; set; }
         public string ClassName { get; set; }
         public string InputEmail { get; set; }
@@ -79,6 +82,8 @@ namespace AuthECAPI.Controllers
             /*Update APIs*/
             app.MapPost("/submitbooks", SubmitBooks);
             app.MapPatch("/updateuserdetails", UpdateUserDetails);
+
+            /*Example of SSE(Server Sent Events) - Not used currently*/
             return app;
         }
 
