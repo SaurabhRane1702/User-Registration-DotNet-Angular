@@ -1,15 +1,7 @@
 using AuthECAPI.Controllers;
 using AuthECAPI.Extensions;
 using AuthECAPI.Models;
-using Microsoft.AspNetCore.Authentication.JwtBearer;
-using Microsoft.AspNetCore.Identity;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.DependencyInjection;
-using Microsoft.IdentityModel.Tokens;
-using System.IdentityModel.Tokens.Jwt;
-using System.Security.Claims;
-using System.Text;
+using Scalar.AspNetCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -27,7 +19,7 @@ builder.Services.AddControllers();
 //but if we return IServiceCollection we can achive the next line of uncommented code.
 //builder.Services.AddIndetityHandlerAndStores();
 //builder.Services.ConfigureIdentityOptions();
-
+//builder.Build().MapScalarApiReference();
 builder.Services.AddSwaggerExplorer()
                 .InjectDBContext(builder.Configuration)
                 //Adding dependency injection
@@ -57,6 +49,7 @@ var app = builder.Build();
 //    app.UseSwaggerUI();
 //}
 app.ConfigureSwaggerExplorer();
+app.MapScalarApiReference();
 
 #region Configure. CORS
 app.ConfigureCORS(builder.Configuration);

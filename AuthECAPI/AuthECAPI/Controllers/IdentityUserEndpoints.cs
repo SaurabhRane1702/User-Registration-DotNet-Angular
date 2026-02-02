@@ -4,15 +4,12 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;
-using Microsoft.IdentityModel.Logging;
 using Microsoft.IdentityModel.Tokens;
+using System.ComponentModel.DataAnnotations;
 using System.Data;
 using System.IdentityModel.Tokens.Jwt;
-using System.Reflection.Metadata.Ecma335;
-using System.Runtime.CompilerServices;
 using System.Security.Claims;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace AuthECAPI.Controllers
 {
@@ -20,11 +17,12 @@ namespace AuthECAPI.Controllers
     {
         public string Email { get; set; }
         public string Password { get; set; }
+        [MinLength(2)]
         public string FullName { get; set; }
         public string Role { get; set; }
         public string Gender { get; set; }
         public int Age { get; set; }
-        public int? LibraryID { get; set; }
+        public int? LibraryId { get; set; }
     }
 
     public class LoginModel
@@ -42,6 +40,7 @@ namespace AuthECAPI.Controllers
 
     public class TimeTableModel
     {
+        [Required]
         public string SubjectName { get; set; }
         public string ClassName { get; set; }
         public string InputEmail { get; set; }
@@ -68,17 +67,23 @@ namespace AuthECAPI.Controllers
             //app.MapPost("api/signin", SignIn);
             app.MapPost("/signin", SignIn);
 
+            /*Get APIs*/
             app.MapPost("/forgotpasswordwithemail", ForgotPassword);
             app.MapPost("/addtimetable", AddTimeTable);
             app.MapPost("/addbooks", AddBooks);
+            app.MapPost("/borrowbook", BorrowBook);
+            /*Fetch APIs*/
             app.MapGet("/fetchtimetable", FetchTimeTable);
             app.MapGet("/fetchbooks", FetchBooks);
             app.MapGet("/fetchborrowedbooks", FetchBorrowedBooks);
-            app.MapPost("/submitbooks", SubmitBooks);
             app.MapGet("/fetchallusers", FetchAllUsers);
             app.MapGet("/fetchallemail", FetchUserEmail);
             app.MapGet("/fetchuseronemail", FetchUserOnEmail);
-            app.MapPost("/borrowbook", BorrowBook);
+            /*Update APIs*/
+            app.MapPost("/submitbooks", SubmitBooks);
+            app.MapPatch("/updateuserdetails", UpdateUserDetails);
+
+            /*Example of SSE(Server Sent Events) - Not used currently*/
             return app;
         }
 
@@ -93,7 +98,7 @@ namespace AuthECAPI.Controllers
                 UserName = userRegistrationModel.Email,
                 Gender = userRegistrationModel.Gender,
                 DOB = DateOnly.FromDateTime(DateTime.Now.AddYears(-userRegistrationModel.Age)).ToString(),
-                LibraryID = userRegistrationModel.LibraryID,
+                LibraryID = userRegistrationModel.LibraryId,
             };
 
             var result = await userManager.CreateAsync(user, userRegistrationModel.Password);
@@ -328,6 +333,35 @@ namespace AuthECAPI.Controllers
         }
 
         [Authorize(Roles ="Admin")]
+        private static async Task<IResult> UpdateUserDetails([FromServices] AppDbContext context, UserManager<AppUser> userManager, [FromBody] UserRegistrationModel userRegistrationModel)
+        {
+            var user = await userManager.FindByEmailAsync(userRegistrationModel.Email);
+            if(user == null)
+            {
+                return Results.NotFound(new { message = "User not found." });
+            }
+            user.FullName = userRegistrationModel.FullName;
+            user.LibraryID = userRegistrationModel.LibraryId;
+            user.Gender = userRegistrationModel.Gender;
+
+            try
+            {
+                var updateResult = await userManager.UpdateAsync(user);
+                if (updateResult.Succeeded)
+                {
+                    return Results.Ok(new { message = "User details updated successfully." });
+                }
+                else
+                {
+                    return Results.BadRequest(updateResult);
+                }
+            }
+            catch (DbUpdateConcurrencyException)
+            {
+                return Results.Conflict(new { message = "Concurrency conflict occurred while updating user details. Please try again." });
+            }
+        }
+        [Authorize(Roles ="Admin")]
         private static async Task<IResult> AddBooks([FromServices] AppDbContext context, [FromBody] BookModel bookModel)
         {
             var b = new Book
@@ -361,7 +395,7 @@ namespace AuthECAPI.Controllers
                     FullName = user.FullName,
                     Age = DateTime.Now.Year - DateTime.Parse(user.DOB).Year,
                     Gender = user.Gender,
-                    LibraryID = user.LibraryID,
+                    LibraryId = user.LibraryID,
                     Role = roles.FirstOrDefault() ?? string.Empty // Fix CS8601: Ensure Role is not null
                 });
             }
@@ -385,7 +419,7 @@ namespace AuthECAPI.Controllers
                     FullName = user.FullName,
                     Age = DateTime.Now.Year - DateTime.Parse(user.DOB).Year,
                     Gender = user.Gender,
-                    LibraryID = user.LibraryID,
+                    LibraryId = user.LibraryID,
                     Role = role.FirstOrDefault() ?? string.Empty // Fix CS8601: Ensure Role is not null
 
                 });

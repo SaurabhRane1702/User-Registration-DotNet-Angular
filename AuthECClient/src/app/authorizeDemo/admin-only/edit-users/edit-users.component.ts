@@ -39,6 +39,16 @@ export class EditUsersComponent {
 
   onSubmit(userForm: any){
     if(userForm.valid){
+      this.userService.updateUserDetails(this.userDetails).subscribe({
+        next: (res: any) => {
+          this.toastrService.success('User details updated successfully', 'Success');
+          console.log("User details updated successfully", res);
+        },
+        error: (err: any) => {
+          this.toastrService.error('Failed to update user details', 'Error');
+          console.log("Error while updating user details", err);
+        } 
+      });
       console.log("Updated User Details to be submitted:", this.userDetails);
     }
   }
