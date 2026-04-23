@@ -1,63 +1,100 @@
 # User Registration
 
-This project implements Authorization and Authentication for Angular by calling a WebAPI written in .NET 9.
-
----
-
-## AuthECAPI
+This project demonstrates authentication and authorization in Angular by calling a Web API written with ASP.NET Core. It combines a standalone Angular frontend with a backend that uses Identity, JWT authentication, EF Core, and role- and policy-based authorization.
 
 ## Features
 
-1. Implemented Early Return  Pattern.
+### Authentication and Authorization
 
-## Required Setup 
+- JWT-based sign-up and sign-in flow
+- Angular route guards and interceptor-based token handling
+- Role-based and policy-based authorization on both client and server
+- Protected user, timetable, and library/book workflows
 
-### Required NPM Packages
-Ensure the following NPM packages are installed:
+### Frontend
 
-1. **Microsoft.EntityFrameworkCore.SqlServer**
-2. **Microsoft.EntityFrameworkCore.Design**
-3. **Microsoft.EntityFrameworkCore.Tools**
+- Angular 19 standalone application
+- Multi-step registration flow using shared state with `BehaviorSubject`
+- Custom claim-based route checks and authorization demos
 
-### Run Migration Command
-To apply migrations, use the following command:
+### Backend
+
+- ASP.NET Core `net8.0` minimal API
+- ASP.NET Core Identity with role support
+- EF Core with SQL Server / LocalDB
+- JWT token issuance with custom claims such as role, gender, age, and optional library membership
+
+## Repository Overview
+
+### `AuthECAPI`
+
+The backend contains the API, Identity setup, EF Core models and migrations, authorization policies, and protected endpoints for profile, timetable, books, and user-management flows.
+
+### `AuthECClient`
+
+The frontend contains the login, registration, forgot-password, and authorization demo pages, along with the route guard, HTTP interceptor, and services that call the API.
+
+## Quick Start
+
+### Prerequisites
+
+- Node.js and npm
+- .NET 8 SDK
+- SQL Server LocalDB or a compatible SQL Server instance
+
+### Run the API
+
+From `AuthECAPI/AuthECAPI`:
+
 ```bash
-add-migration <Name of commit>
+dotnet restore
+dotnet run
 ```
 
-USE [AuthECDB]
-GO
+The development API runs on `http://localhost:5181`.
 
-INSERT INTO [dbo].[AspNetRoles] ([Id], [Name], [NormalizedName], [ConcurrencyStamp])
-VALUES 
-    (1, 'Admin', 'ADMIN', NULL),
-    (2, 'Teacher', 'TEACHER', NULL),
-    (3, 'Student', 'STUDENT', NULL);
-GO
+### Run the Angular App
 
-For adding user you will have to Register Each user from userdetails.json file for every fresh Clone.
+From `AuthECClient`:
 
-### Different Angular Features used in the this solution 
-1. The solution leverages Angular's advanced capabilities by implementing custom directives to enable role-based access control. These directives dynamically evaluate the user's claims, specifically the 'Role' attribute, to determine and restrict access to specific UI elements based on authorization rules.
+```bash
+npm install
+npm start
+```
 
-   
-# AuthECClient
+The Angular app runs on `http://localhost:4200` and calls the API at `http://localhost:5181/api`.
 
-AuthECClient is a feature-rich application that incorporates robust authentication and authorization mechanisms, along with a dynamic multi-step form built using Angular. 
+## Database and Roles
 
-## Features
+The backend uses EF Core migrations located under `AuthECAPI/AuthECAPI/Migrations`.
 
-### Authentication & Authorization
-- **JWT Authentication**: Secure authentication using JSON Web Tokens (JWT).
-- **Guards for Authorization**: Implemented Angular guards to control access to different parts of the application based on user roles and permissions.
+To apply the current schema:
 
-### Multi-Step Angular Form
-- **Dynamic Multi-Step Form**: Created a multi-page form workflow that allows users to navigate through multiple steps seamlessly.
-- **Shared Services with BehaviorSubject**: Utilized Angular's shared services along with `BehaviorSubject` for managing state across different steps of the form, ensuring smooth data flow and interaction between components.
+```bash
+dotnet ef database update
+```
 
-## Highlights
-- Leveraged modern authentication techniques to secure the application.
-- Designed an intuitive and user-friendly multi-step form process.
-- Ensured modularity and reusability of components with shared services.
+The application expects these roles to exist for protected flows:
 
-Feel free to explore the project and contribute!
+- `Admin`
+- `Teacher`
+- `Student`
+
+If you are setting up a fresh database, seed those roles before testing role-restricted features.
+
+## What You Can Explore
+
+- Sign up and sign in with JWT authentication
+- Admin-only and teacher/student-specific routes
+- Claim-based authorization examples such as library membership and gender/age-based policies
+- Book borrowing/submission flows
+- Timetable management and user-management scenarios
+
+## Further Docs
+
+If you want deeper setup, architecture, or contributor guidance, use:
+
+- [AGENTS.md](./AGENTS.md) for agent and contributor entrypoints
+- [docs/SETUP.md](./docs/SETUP.md) for environment and setup details
+- [docs/ARCHITECTURE.md](./docs/ARCHITECTURE.md) for system design
+- [docs/API.md](./docs/API.md) for endpoint details
